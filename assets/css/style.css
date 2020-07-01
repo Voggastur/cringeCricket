@@ -9,10 +9,22 @@ main {
 
 .navbar {
     position: fixed;
-    background-color: #23232e;
-    color: #fff;
+    background-color: #33333a;
     transition: width 0.5s ease;
     overflow: scroll;
+}
+
+a {
+    color:#c07b43;
+    text-decoration:none;
+    cursor:pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover {
+    color:#c07b43;
+    text-decoration:none;
+    cursor:pointer;
 }
 
 .navbar-nav {
@@ -23,10 +35,6 @@ main {
     flex-direction: column;
     align-items: center;
     height: 100%;
-}
-
-.nav-item:last-child {
-    margin-top: auto;
 }
 
 .nav-link {
@@ -50,19 +58,16 @@ main {
     margin-left: 15px;
     margin-right: 15px;
     font-size: 2em;
-    opacity: 0.5;
-    color: gray;
+    color: #c07b43;
     transition: all 0.5s ease-in-out;
 }
 
 .nav-item:hover .nav-link .fas {
-    opacity: 1;
-    color: #ff7eee;
+    color: #c07b43;
 }
 
 .navbar .navbar-nav .logo .nav-link .chevrons {
-    margin: 10px;
-    padding: 0;
+    margin: 15px;
     font-size: 2em;
     transform: rotate(0deg);
     transition: all 0.5s ease-in-out;
@@ -70,7 +75,7 @@ main {
 
 .navbar:hover .navbar-nav .logo .nav-link .chevrons {
     transform: rotate(-180deg);
-    margin-left: 11rem;
+    margin-left: 12.5rem;
 }
 
 .link-text {
@@ -79,9 +84,10 @@ main {
 }
 
 .logo {
-    width: 90%;
+    display: block;
+    position: relative;
+    width: 100%;
     margin-bottom: 1rem;
-    color: #ffffff;
     background-color: #1c1c2c;
 }
 
