@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Add Task</h3>
+<div class="row">
+	<form action="{{ url_for('insert_hero') }}" method="POST" class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">poll</i>
+				<select id="hero" name="hero_name">
+                  <option value="" disabled selected>Choose Category</option>
+                  {% for hero in heroes %}
+                      <option value="{{hero.hero_name}}">{{hero.hero_name}}</option>
+                  {% endfor %}
+                </select>
+				<label>Task Category</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">assignment</i>
+				<input id="hero_name" name="hero_name" type="text"/>
+				<label for="icon_prefix">Hero Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">subject</i>
+				<input id="weapon" name="weapon" type="text"/>
+				<label for="icon_telephone">Hero weapon</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">today</i>
+                <input id="armor" name="armor" type="text"/>
+				<label for="icon_prefix">Hero armor</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">assignment</i>
+				<input id="profession" name="profession" type="text"/>
+				<label for="icon_prefix">Hero profession</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">assignment</i>
+				<input id="mount" name="mount" type="text"/>
+				<label for="icon_prefix">Hero mount</label>
+			</div>
+		</div>
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">subject</i>
+				<textarea name="possessions" id="possessions" class="materialize-textarea"></textarea>
+				<label for="icon_telephone">Hero possessions</label>
+			</div>
+		</div>
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">assignment</i>
+				<input id="home" name="home" type="text"/>
+				<label for="icon_prefix">Hero home</label>
+			</div>
+		</div>
+        <div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">assignment</i>
+				<input id="race" name="race" type="text"/>
+				<label for="icon_prefix">Hero race</label>
+			</div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
+
+hero_name
+:
+"cassander"
+weapon
+:
+"shortbow and dagger"
+armor
+:
+"light studded leather"
+profession
+:
+"horse racing"
+mount
+:
+"horse"
+possessions
+:
+"flintstone, lockpicks and tent"
+home
+:
+"stormkulle"
+race
+:
+"alderland human"
