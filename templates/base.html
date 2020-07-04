@@ -2,30 +2,59 @@
 <html lang="en">
 
 <head>
+	<!-- Fontawesome Icons Font -->
+	<script src="https://kit.fontawesome.com/00644b551d.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Elite&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}" />
+    <link rel="stylesheet" href="static/css/main.css">
 </head>
 
 <body>
 	<header>
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{{url_for('get_tasks')}}" class="brand-logo">Task Manager</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_tasks')}}">Home</a></li>
-                    <li><a href="{{url_for('add_task')}}">New Task</a></li>
-                    <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{url_for('get_tasks')}}">Home</a></li>
-                    <li><a href="{{url_for('add_task')}}">New Task</a></li>
-                    <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+		<nav class="navbar">
+			<ul class="navbar-nav">
+				<li class="logo">
+					<a href="{{url_for('get_heroes')}}" class="nav-link">
+						<i class="fas fa-angle-double-right chevrons"></i>
+						<span class="link-text logo-text">Adventurers</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="{{url_for('add_hero')}}" class="nav-link">
+						<i class="fas fa-pencil-alt"></i>
+						<span class="link-text">Create</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="{{url_for('get_heroes')}}" class="nav-link">
+						<i class="far fa-eye"></i>
+						<span class="link-text">Read</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="{{url_for('edit_hero', hero_id=heroes._id)}}" class="nav-link">
+						<i class="far fa-edit"></i>
+						<span class="link-text">Update</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="{{url_for('delete_hero', hero_id=heroes._id)}}" class="nav-link">
+						<i class="far fa-trash-alt"></i>
+						<span class="link-text">Delete</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<img src="static/images/adventurer_team.jpg" alt="Group of Heroes" class="responsive-img hero-image"/>
+
 	<div class="container">
 		{% block content %} {% endblock %}
 	</div>
@@ -38,18 +67,7 @@
         $(".button-collapse").sideNav();
       });
 
-      $(".datepicker").pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15, // Creates a dropdown of 15 years to control year,
-        today: "Today",
-        clear: "Clear",
-        close: "Ok",
-        closeOnSelect: false, // Close upon selecting a date,
-      });
 
-        document.getElementById("matfix").addEventListener("click", function (e) {
-        e.stopPropagation();
-      });
 
 	</script>
 

@@ -1,17 +1,16 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Add Task</h3>
+<h3>Add Hero</h3>
 <div class="row">
 	<form action="{{ url_for('insert_hero') }}" method="POST" class="col s12">
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">poll</i>
 				<select id="hero" name="hero_name">
-                  <option value="" disabled selected>Choose Category</option>
                   {% for hero in heroes %}
                       <option value="{{hero.hero_name}}">{{hero.hero_name}}</option>
                   {% endfor %}
                 </select>
-				<label>Task Category</label>
+				<label>Hero Category</label>
 			</div>
 		</div>
 		<div class="row">
@@ -74,28 +73,3 @@
 </div>
 
 {% endblock %}
-
-hero_name
-:
-"cassander"
-weapon
-:
-"shortbow and dagger"
-armor
-:
-"light studded leather"
-profession
-:
-"horse racing"
-mount
-:
-"horse"
-possessions
-:
-"flintstone, lockpicks and tent"
-home
-:
-"stormkulle"
-race
-:
-"alderland human"

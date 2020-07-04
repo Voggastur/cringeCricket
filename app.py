@@ -4,7 +4,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
-  import env 
+    import env
+
 
 app = Flask(__name__)
 
@@ -17,19 +18,18 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_heroes')
 def get_heroes():
-    return render_template("heroes.html", 
-                           heroes=mongo.db.tasks.find())
+    return render_template("heroes.html",
+                           heroes=mongo.db.heroes.find())
 
 
 @app.route('/add_hero')
 def add_hero():
-    return render_template('addhero.html',
-                           categories=mongo.db.categories.find())
+    return render_template('addhero.html')
 
 
 @app.route('/insert_hero', methods=['POST'])
-def insert_task():
-    heroes = mongo.db.tasks
+def insert_hero():
+    heroes = mongo.db.heroes
     heroes.insert_one(request.form.to_dict())
     return redirect(url_for('get_heroes'))
 
@@ -37,67 +37,30 @@ def insert_task():
 @app.route('/edit_hero/<hero_id>')
 def edit_hero(hero_id):
     the_hero = mongo.db.heroes.find_one({"_id": ObjectId(hero_id)})
-    all_categories = mongo.db.categories.find()
-    return render_template('edittask.html', task=the_task,
-                           categories=all_categories)
+    return render_template('edithero.html', hero=the_hero)
 
 
-@app.route('/update_task/<task_id>', methods=["POST"])
-def update_task(task_id):
-    tasks = mongo.db.tasks
-    tasks.update( {'_id': ObjectId(task_id)},
+@app.route('/update_hero/<hero_id>', methods=["POST"])
+def update_hero(hero_id):
+    heroes = mongo.db.heroes
+    heroes.update({'_id': ObjectId(hero_id)},
     {
-        'task_name':request.form.get('task_name'),
-        'category_name':request.form.get('category_name'),
-        'task_description': request.form.get('task_description'),
-        'due_date': request.form.get('due_date'),
-        'is_urgent':request.form.get('is_urgent')
+        'hero_name': request.form.get('hero_name'),
+        'weapon': request.form.get('weapon'),
+        'armor': request.form.get('armor'),
+        'profession': request.form.get('profession'),
+        'mount': request.form.get('mount'),
+        'possessions': request.form.get('possessions'),
+        'home': request.form.get('home'),
+        'race': request.form.get('race'),
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('get_heroes'))
 
 
-@app.route('/delete_task/<task_id>')
-def delete_task(task_id):
-    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('get_tasks'))
-
-
-@app.route('/get_categories')
-def get_categories():
-    return render_template('categories.html',
-                           categories=mongo.db.categories.find())
-
-
-@app.route('/delete_category/<category_id>')
-def delete_category(category_id):
-    mongo.db.categories.remove({'_id': ObjectId(category_id)})
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/edit_category/<category_id>')
-def edit_category(category_id):
-    return render_template('editcategory.html',
-    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
-
-
-@app.route('/update_category/<category_id>', methods=['POST'])
-def update_category(category_id):
-    mongo.db.categories.update(
-        {'_id': ObjectId(category_id)},
-        {'category_name': request.form.get('category_name')})
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/insert_category', methods=['POST'])
-def insert_category():
-    category_doc = {'category_name': request.form.get('category_name')}
-    mongo.db.categories.insert_one(category_doc)
-    return redirect(url_for('get_categories'))
-
-
-@app.route('/add_category')
-def add_category():
-    return render_template('addcategory.html')
+@app.route('/delete_hero/<hero_id>')
+def delete_hero(hero_id):
+    mongo.db.heroes.remove({'_id': ObjectId(hero_id)})
+    return redirect(url_for('get_heroes'))
 
 
 if __name__ == '__main__':
