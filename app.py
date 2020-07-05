@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -9,8 +9,13 @@ if path.exists("env.py"):
 
 app = Flask(__name__)
 
+
+# My DB on MongoDB
 app.config["MONGO_DBNAME"] = 'adventurers'
+# SECRET_KEY variable
 app.config["MONGO_URI"] = os.environ.get('SECRET_KEY')
+# File Upload Config
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
 
 mongo = PyMongo(app)
 
@@ -44,7 +49,7 @@ def edit_hero(hero_id):
 def update_hero(hero_id):
     heroes = mongo.db.heroes
     heroes.update({'_id': ObjectId(hero_id)},
-    {
+        {
         'hero_name': request.form.get('hero_name'),
         'weapon': request.form.get('weapon'),
         'armor': request.form.get('armor'),
@@ -53,7 +58,7 @@ def update_hero(hero_id):
         'possessions': request.form.get('possessions'),
         'home': request.form.get('home'),
         'race': request.form.get('race'),
-    })
+        })
     return redirect(url_for('get_heroes'))
 
 

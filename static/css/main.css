@@ -1,121 +1,25 @@
 /* Hero image */
 
 .hero-image {
-    top: 0;
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 400px;
+  top: 0;
+  z-index: -1;
+  position: relative;
+  width: 100%;
+  height: 300px;
 }
 
 /* Main and Nav */
 
 main {
   font-family: "Montserrat", sans-serif;
-  color: #c2c2c2;
-  margin-left: 6rem;
-  padding: 0;
-}
-
-.navbar {
-  position: fixed;
-  background-color: #33333a;
-  transition: all 0.5s ease;
-  overflow: hidden;
-}
-
-.nav-link {
-  color: #c2c2c2;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.nav-link:hover,
-.nav-link:active,
-.nav-link:focus,
-.logo-text:hover,
-.logo-text:active,
-.logo-text:focus,
-.link-text:hover,
-.link-text:active,
-.link-text:focus,
-.navbar:hover .logo-text,
-.navbar:active .logo-text,
-.navbar:focus .logo-text {
-  transition: all 0.5s ease-in-out;
-  color: #c07b43;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.navbar-nav {
-  list-style: none;
-  padding: 0;
+  color: #424242;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 5rem;
-  text-decoration: none;
-}
-
-.nav-item {
-  width: 100%;
-  background-color: inherit;
-  transition: all 0.5s ease-in-out;
-}
-
-.nav-item:hover {
-  background-color: #1c1c2c;
-}
-
-.nav-item .nav-link .fas,
-.nav-item .nav-link .far {
-  margin-top: 25px;
-  font-size: 2em;
-  color: #c2c2c2;
-}
-
-.nav-item:hover .nav-link .fas,
-.nav-item:hover .nav-link .far {
-  transition: all 0.5s ease-in-out;
-  color: #c07b43;
-}
-
-.navbar .chevrons {
   padding: 0;
-  position: absolute;
-  color: #c2c2c2;
-  margin-top: 10px;
-  font-size: 2.7em;
-  transform: rotate(0deg);
-  transition: all 0.5s ease-in-out;
 }
 
-.navbar:hover:active:focus .chevrons {
-  color: #c07b43;
-  transform: rotate(180deg);
-  margin-left: 11rem;
-  margin-top: 0;
-}
-
-.link-text {
-  display: none;
-  text-decoration: none;
-  font-size: 1.2rem;
-  margin-left: 2.5rem;
-}
-
-.logo {
-  width: 100%;
-  background-color: #1c1c2c;
+.nav-link .fas {
+  font-size: 1.5em;
+  text-align: right;
 }
 
 .logo-text {
@@ -123,85 +27,51 @@ main {
   text-decoration: none;
   text-align: center;
   font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  display: inline;
-  position: absolute;
-  left: -999px;
+  font-size: 1.5em;
 }
 
-/* Cards */
+/* Hero Cards */
 
 .card {
-    padding: 20px;
-    font-family: "Special Elite", cursive;
-    text-align: center;
-    color: #fff;
-    border: 5px #c07b43 round;
-    border-radius: 5px;
+  opacity: 0.8;
+  padding: 10px;
+  font-family: "Special Elite", cursive;
+  text-align: center;
+  color: #fff;
+  border: 20px #c07b43 round;
+  border-radius: 5px;
 }
 
-.card h2, .card .fas {
-    text-align: center;
-    font-size: 1.8rem;
+.card-items {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
-.card h5 {
-    text-align: center;
- font-size: 1.4rem;
-}
+/* Modal */
 
-.card p {
-    text-align: center;
-    font-size: 1.1rem;
+.modal {
+  opacity: 0.8;
+  font-family: "Special Elite", cursive;
+  text-align: center;
+  color: #000;
+  background-color: #424242;
+  font-size: 1.2em;
+  border: 50px #c07b43 round;
+  border-radius: 5px;
 }
 
 /* Large screens */
 @media only screen and (min-width: 600px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 5rem;
-    height: 100vh;
-  }
-
-  .navbar:hover {
-    width: 16rem;
-  }
-
-  .navbar:hover .link-text {
-    transition: all 0.5s ease-in-out;
-    display: inline;
-  }
-
-  .navbar:hover .logo-text {
-    left: -20px;
-  }
 }
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 5rem;
+  .link-text {
+    visibility: none;
   }
 
-  .logo {
-    display: none;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .nav-link {
-    justify-content: center;
-  }
-
-  main {
-    margin-top: 3rem;
-    margin-left: 1rem;
+  .nav-link .fas {
+    font-size: 2em;
   }
 }
