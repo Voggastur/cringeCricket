@@ -1,11 +1,13 @@
 /* Hero image */
 
 .hero-image {
+  position: absolute;
   top: 0;
+  margin: 0;
+  padding: 0;
   z-index: -1;
-  position: relative;
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 
 /* Main and Nav */
@@ -17,23 +19,22 @@ main {
   padding: 0;
 }
 
-.nav-link .fas {
-  font-size: 1.5em;
-  text-align: right;
-}
-
-.logo-text {
+.navbar .logo-text {
   font-family: "Special Elite", cursive;
+  color: #424242;
   text-decoration: none;
-  text-align: center;
   font-weight: bold;
   font-size: 1.5em;
 }
 
+.nav-link .fas {
+  font-size: 1em;
+}
+
 /* Hero Cards */
 
-.card {
-  opacity: 0.8;
+.card-panel {
+  opacity: 0.7;
   padding: 10px;
   font-family: "Special Elite", cursive;
   text-align: center;

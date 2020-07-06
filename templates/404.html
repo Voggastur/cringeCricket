@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="flow-text">Oh no, it looks like this link didn't work..</h2>
+            <p class="flow-text"><a href="{{ url_for('get_heroes') }}">Click here to get back home</a></p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
