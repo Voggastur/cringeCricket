@@ -4,10 +4,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!-- Materialize CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" href="main.css">
-	<title>Document</title>
+	<!-- Materialize Icons-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Fontawesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+    <title>Adventure Hero Set</title>
 </head>
 
 <body>
@@ -15,26 +20,29 @@
 
 
 	<div class="navbar-fixed">
-		<nav class="teal">
+		<nav class="light-green darken-2">
 			<div class="container">
 				<div class="nav-wrapper">
-					<a href="#!" class="brand-logo">TravelVille</a>
+					<a href="#!" class="brand-logo flow-text">Adventure Hero Set</a>
 					<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
 						<li>
-							<a href="#home">Home</a>
+							<a href="{{url_for('get_heroes')}}">
+								<span class="flow-text">Home</span>
+								<i class="fas fa-home"></i>
+							</a>
 						</li>
 						<li>
-							<a href="#search">Search</a>
+							<a href="{{url_for('add_hero')}}">
+								<span class="flow-text">Create Hero</span>
+								<i class="fas fa-user"></i>
+							</a>
 						</li>
 						<li>
-							<a href="#popular">Popular Places</a>
-						</li>
-						<li>
-							<a href="#gallery">Gallery</a>
-						</li>
-						<li>
-							<a href="#contact">Contact</a>
+							<a href="{{url_for('get_adventure')}}">
+								<span class="flow-text">Adventures</span>
+								<i class="fas fa-chess-rook"></i>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -43,19 +51,22 @@
 	</div>
 	<ul class="sidenav" id="mobile-demo">
 		<li>
-			<a href="#home">Home</a>
+			<a href="{{url_for('get_heroes')}}">
+				<span>Home</span>
+				<i class="fas fa-home"></i>
+			</a>
 		</li>
 		<li>
-			<a href="#search">Search</a>
+			<a href="{{url_for('add_hero')}}">
+				<span>Create New Hero</span>
+				<i class="fas fa-user"></i>
+			</a>
 		</li>
 		<li>
-			<a href="#popular">Popular Places</a>
-		</li>
-		<li>
-			<a href="#gallery">Gallery</a>
-		</li>
-		<li>
-			<a href="#contact">Contact</a>
+			<a href="{{url_for('get_adventure')}}">
+				<span>Check Adventures</span>
+				<i class="fas fa-chess-rook"></i>
+			</a>
 		</li>
 	</ul>
 
@@ -93,7 +104,7 @@
 	</section>
 
 	<!-- Section: Search -->
-	<section id="search" class="section section-search teal darken-1 white-text center scrollspy">
+	<section id="search" class="section section-search light-green darken-1 white-text center scrollspy">
 		<div class="container">
 			<div class="row">
 				<div class="col s12">
@@ -112,21 +123,21 @@
 			<div class="row">
 				<div class="col s12 m4">
 					<div class="card-panel">
-						<i class="material-icons large teal-text">room</i>
+						<i class="material-icons large light-green-text">room</i>
 						<h4>Pick Where</h4>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, velit.</p>
 					</div>
 				</div>
 				<div class="col s12 m4">
 					<div class="card-panel">
-						<i class="material-icons large teal-text">store</i>
+						<i class="material-icons large light-green-text">store</i>
 						<h4>Travel Shop</h4>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, velit.</p>
 					</div>
 				</div>
 				<div class="col s12 m4">
 					<div class="card-panel">
-						<i class="material-icons large teal-text">airplanemode_active</i>
+						<i class="material-icons large light-green-text">airplanemode_active</i>
 						<h4>Fly Cheap</h4>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, velit.</p>
 					</div>
@@ -140,7 +151,7 @@
 		<div class="container">
 			<div class="row">
 				<h4 class="center">
-					<span class="teal-text">Popular</span> Places</h4>
+					<span class="light-green-text">Popular</span> Places</h4>
 				<div class="col s12 m4">
 					<div class="card">
 						<div class="card-image">
@@ -195,7 +206,7 @@
 	</section>
 
 	<!-- Section: Follow -->
-	<section class="section section-follow teal darken-2 white-text center">
+	<section class="section section-follow light-green darken-2 white-text center">
 		<div class="container">
 			<div class="row">
 				<div class="col s12">
@@ -225,7 +236,7 @@
 	<section id="gallery" class="section section-gallery scrollspy">
 		<div class="container">
 			<h4 class="center">
-				<span class="teal-text">Photo </span> Gallery
+				<span class="light-green-text">Photo </span> Gallery
 			</h4>
 			<div class="row">
 				<div class="col s12 m3">
@@ -274,60 +285,19 @@
 														</div>
 	</section>
 
-	<!-- Section: Contact -->
-	<section id="contact" class="section section-contact scrollspy">
-		<div class="container">
-			<div class="row">
-				<div class="col s12 m6">
-					<div class="card-panel teal white-text center">
-						<i class="material-icons medium">email</i>
-						<h5>Contact Us For Booking</h5>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus sed praesentium
-							delectus. Sit, mollitia
-							quo. Veniam repellat voluptas ipsum doloremque?</p>
-					</div>
-					<ul class="collection with-header">
-						<li class="collection-header">
-							<h4>Location</h4>
-						</li>
-						<li class="collection-item">Travelville Agency</li>
-						<li class="collection-item">555 Beach rd, Suite 33</li>
-						<li class="collection-item">Miami FL, 55555</li>
-					</ul>
-				</div>
-				<div class="col s12 m6">
-					<div class="card-panel grey lighten-3">
-						<h5>Please fill out this form</h5>
-						<div class="input-field">
-							<input type="text" placeholder="Name" id="name">
-							<label for="name">Name</label>
-						</div>
-						<div class="input-field">
-							<input type="email" placeholder="Email" id="email">
-							<label for="email">Email</label>
-						</div>
-						<div class="input-field">
-							<input type="text" placeholder="Phone" id="phone">
-							<label for="phone">Phone</label>
-						</div>
-						<div class="input-field">
-							<textarea class="materialize-textarea" placeholder="Enter Message" id="message"></textarea>
-							<label for="message">Message</label>
-						</div>
-						<input type="submit" value="Submit" class="btn">
-          </div>
-					</div>
-				</div>
-			</div>
-	</section>
-
 	<!-- Footer -->
-	<footer class="section teal darken-2 white-text center">
-		<p class="flow-text">Travelville &copy; 2018</p>
+	<footer class="section light-green darken-2 white-text center">
+		<p class="flow-text">Adventure Plan 2020</p>
 	</footer>
-	<script scr="main.js"></script>
+
+	<!-- My own JavaScript -->
+	<script type="text/javacript" src="assets/js/main.js/"></script>
+	<!-- Materialize JavaScript -->
 	<!-- Materialize JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 </body>
 
 </html>

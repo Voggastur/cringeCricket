@@ -1,3 +1,9 @@
+* {
+  font-family: "Special Elite", cursive;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .slider .btn {
   margin-top: 20px;
 }

@@ -1,78 +1,86 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Add Hero</h3>
-<div class="row">
-	<form action="{{ url_for('insert_hero') }}" method="POST" class="col s12">
+<h3 class="white-text">Add a Hero</h3>
+<div class="row card">
+	<form class="col s12 brown darken-3 white-text" action="{{ url_for('insert_hero') }}" method="POST">
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-chess-rook"></i>
-				<select id="adventure" name="adventure_name">
-                  {% for mission in adventures %}
-                      <option id="{{mission.adventure_name}}" value="{{mission.adventure_name}}">{{mission.adventure_name}}</option>
+				<select id="adventures" name="adventure_name">
+                    <option value="" disabled selected>Choose Adventure</option>
+                  {% for adventure in adventures %}
+                        {% if adventure.adventure_name == heroes.adventure_name %}
+                        <option value="{{adventure.adventure_name}}" selected >{{adventure.adventure_name}}</option>
+                        {% else %}
+                        <option value="{{adventure.adventure_name}}">{{adventure.adventure_name}}</option>
+                        {% endif %}
                   {% endfor %}
                 </select>
-				<label for="adventure_name">Hero Adventure</label>
-			</div>
-
-		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="fas fa-arrow-circle-right"></i>
-				<input id="hero_name" name="hero_name" type="text"/>
-				<label for="icon_prefix">Hero Name</label>
+				<label>Hero Adventure</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-arrow-circle-right"></i>
-				<input id="weapon" name="weapon" type="text"/>
-				<label for="icon_telephone">Hero weapon</label>
+				<input id="hero_name" name="hero_name" type="text" placeholder="Hero Name"/>
+				<label for="hero_name">Hero Name</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-arrow-circle-right"></i>
-				<input id="armor" name="armor" type="text"/>
-				<label for="icon_prefix">Hero armor</label>
+				<input id="weapon" name="weapon" type="text" placeholder="Hero weapon"/>
+				<label for="weapon">Hero weapon</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-arrow-circle-right"></i>
-				<input id="race" name="race" type="text"/>
-				<label for="icon_prefix">Hero race</label>
+				<input id="armor" name="armor" type="text" placeholder="Hero armor"/>
+				<label for="armor">Hero armor</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-arrow-circle-right"></i>
-				<input id="profession" name="profession" type="text"/>
-				<label for="icon_prefix">Hero profession</label>
+				<input id="race" name="race" type="text" placeholder="Hero species/race"/>
+				<label for="race">Hero race</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-arrow-circle-right"></i>
-				<input id="mount" name="mount" type="text"/>
-				<label for="icon_prefix">Hero mount</label>
+				<input id="profession" name="profession" type="text" placeholder="Previous or current work" />
+				<label for="profession">Hero profession</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-arrow-circle-right"></i>
-				<input id="home" name="home" type="text"/>
-				<label for="icon_prefix">Hero home</label>
+				<input id="mount" name="mount" type="text" placeholder="Hero mount"/>
+				<label for="mount">Hero mount</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s12 white-text">
 				<i class="fas fa-arrow-circle-right"></i>
-				<textarea name="possessions" id="possessions" class="materialize-textarea"></textarea>
-				<label for="icon_telephone">Hero possessions</label>
+				<input id="home" name="home" type="text" placeholder="Hero origin"/>
+				<label for="home">Hero home</label>
 			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12 white-text">
+				<i class="fas fa-arrow-circle-right"></i>
+				<textarea name="possessions" id="possessions" class="materialize-textarea" placeholder="Possessions"></textarea>
+				<label for="possessions">Hero possessions</label>
+			</div>
+		</div>
+		<div class="row">
+			<button class="btn waves-effect" type="submit" name="action">Edit Task
+                <i class="fas fa-arrow-circle-right"></i>
+             </button>
 		</div>
 	</form>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<!-- jQuery CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}

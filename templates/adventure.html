@@ -3,18 +3,20 @@
 <div class="row">
 	<h3>Adventures</h3>
 	<ul class="collapsible" data-collapsible="accordion">
-		{% for adv in adventures %}
+		{% for adventure in adventures %}
 		<li>
 			<div class="collapsible-header">
 				<a href="" class="waves-effect waves-light btn btn_small">Del</a>
-				<a href="{{url_for('edit_adventure', adventures_id=adventures._id)}}" class="waves-effect btn btn_small blue">Edit</a>
+				<a href="{{url_for('edit_adventure', adventures_id=adventures._id)}}"
+					class="waves-effect btn btn_small blue">Edit</a>
 				<div class="task_header">
-					<strong>{{adv.adventure_name}}</strong>
+					<strong>{{adventure.adventure_name}}</strong>
 				</div>
 			</div>
 		</li>
 		{% endfor %}
 	</ul>
 </div>
-
+<!-- jQuery CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
