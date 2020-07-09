@@ -1,71 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Fontawesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <!-- My shortcut icon -->
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="{{url_for('static', filename='images/favicon.ico')}}"
+    />
+    <!-- Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- My CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Adventure Set</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!-- Fontawesome Icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Elite&display=swap" rel="stylesheet">
-	<!-- My CSS -->
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
-	<!-- My shortcut icon -->
-	<link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='images/favicon.ico')}}" />
-	<link rel="stylesheet" href="../static/css/style.css">
-	<title>Adventure Set</title>
-</head>
-
-<body>
-	<header>
-		<nav>
-			<a href="{{url_for('get_heroes')}}" class="logo">
-				<span>Adventure Set</span>
-			</a>
-			<div class="topnav" id="myTopnav">
-				<a href="#home" class="active">Home</a>
-				<a href="#news">News</a>
-				<a href="#contact">Contact</a>
-				<a href="#about">About</a>
-				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-					<i class="fa fa-bars"></i>
-				</a>
-			</div>
-			<ul class="navlist">
-				<li>
-					<a href="{{url_for('get_heroes')}}">
-						<i class="fas fa-home"></i>
-						<span> Home</span>
-					</a>
-				</li>
-				<li>
-					<a href="{{url_for('add_hero')}}">
-						<i class="fas fa-shield-alt"></i>
-						<span> Create New Hero</span>
-					</a>
-				</li>
-				<li>
-					<a href="{{url_for('get_adventure')}}">
-						<i class="fas fa-chess-rook"></i>
-						<span> Check Adventures</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-
-	<img src="../static/images/adventurer_team2.jpg" alt="Group of Heroes" class="hero-image" />
-
-	<div class="container">
-		{% block content %} {% endblock %}
-	</div>
-
-	<!-- jQuery CDN -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- My Javascript -->
-    <script type="text/javascript" src="../static/js/script.js/" async defer></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
-</body>
-
+  <body>
+    <header>
+      <nav class="nav-wrapper blue-grey darken-2">
+        <a href="{{url_for('get_heroes')}}" class="brand-logo">
+          <span class="logo-text dark-text">Adventure Set</span>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="{{url_for('get_heroes')}}">
+              <span>Home</span>
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('add_hero')}}">
+              <span>Create Hero</span>
+              <i class="fas fa-fist-raised"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('get_adventure')}}">
+              <span>Adventures</span>
+              <i class="fas fa-chess-rook"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="right hide-on-large-only">
+        <li><a href="{{url_for('get_heroes')}}">
+              <i class="fas fa-home"></i>
+            </a></li>
+        <li><a href="{{url_for('add_hero')}}">
+              <i class="fas fa-fist-raised"></i>
+            </a></li>
+        <li><a href="{{url_for('get_adventure')}}">
+              <i class="fas fa-chess-rook"></i>
+            </a></li>
+      </ul>
+      </nav>
+      
+    </header>
+    <main>
+      <h1>Adventure Set</h1>
+      <div class="container">
+        {% block content %} {% endblock %}
+      </div>
+    </main>
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <!-- My Javascript -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
 </html>

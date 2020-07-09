@@ -1,16 +1,5 @@
 $(document).ready(function () {
-  $(".carousel").carousel({ fullWidth: true });
   $(".sidenav").sidenav();
   $(".modal").modal();
+  $(".card").css("margin", "20px").css("color", "green");
 });
-
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-document.getElementByClassName("body").style.background = "yellow";

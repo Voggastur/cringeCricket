@@ -1,99 +1,103 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<script src="https://kit.fontawesome.com/00644b551d.js" crossorigin="anonymous"></script>
-	<script defer src="assets/js/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
-	<link rel="stylesheet" href="static/css/main.css" />
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Special+Elite&display=swap" rel="stylesheet">
-	<!-- Materialize CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<!-- Materialize JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<title>Adventurers</title>
-</head>
+    <title>Adventurers</title>
+    <style>
+      html {
+        height: 100%;
+        overflow: hidden;
+      }
 
-<body>
+      body {
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        perspective: 1px;
+        transform-style: preserve-3d;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        font-family: "Luna";
+      }
 
-	<header>
-		<nav class="navbar">
-			<ul class="navbar-nav">
-				<li class="logo">
-					<a href="{{url_for('get_heroes')}}" class="nav-link">
-						<i class="fas fa-angle-double-right chevrons"></i>
-						<span class="link-text logo-text">Adventurers</span>
-					</a>
-				</li>
+      main {
+        box-sizing: border-box;
+        min-height: 100vh;
+        padding: 30vw 0 5vw;
+        position: relative;
+        transform-style: inherit;
+        width: 100vw;
+      }
 
-				<li class="nav-item">
-					<a href="{{url_for('add_heroes')}}" class="nav-link">
-						<i class="fas fa-pencil-alt"></i>
-						<span class="link-text">Create</span>
-					</a>
-				</li>
+      main h1 {
+        margin-top: -100px;
+      }
 
-				<li class="nav-item">
-					<a href="{{url_for('get_heroes')}}" class="nav-link">
-						<i class="far fa-eye"></i>
-						<span class="link-text">Read</span>
-					</a>
-				</li>
+      main,
+      main:before {
+        background: 50% 50% / cover;
+      }
 
-				<li class="nav-item">
-					<a href="{{url_for('edit_hero', hero_id=hero._id)}}" class="nav-link">
-						<i class="far fa-edit"></i>
-						<span class="link-text">Update</span>
-					</a>
-				</li>
+      main::before {
+        position: absolute;
+        display: block;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(adventurer_team.jpg);
+        background-size: cover;
+        transform-origin: center center 0;
+        transform: translateZ(-1px) scale(2);
+        z-index: -1;
+        min-height: 100vh;
+      }
 
-				<li class="nav-item">
-					<a href="{{url_for('delete_hero', hero_id=hero._id)}}" class="nav-link">
-						<i class="far fa-trash-alt"></i>
-						<span class="link-text">Delete</span>
-					</a>
-				</li>
+      main * {
+        font-weight: normal;
+        letter-spacing: 0.2em;
+        text-align: center;
+        margin: 0;
+        padding: 1em 0;
+      }
+    </style>
+  </head>
 
-			</ul>
-			<div>
-			</div>
-		</nav>
-	</header>
+  <body>
+    <header></header>
 
-	<img src="static/images/adventurer_team2.jpg" alt="Group of Heroes" class="responsive-img hero-image"/>
-
-	<main>
-
-		<h1>Adventure Planner</h1>
-
-        {% for hero in heroes %}
-
-        <div class="card">
-            <h2>{{hero.hero_name}}</h2>
-            <h5>{{hero.profession}}</h5>
-            <p>{{hero.weapon}}</p>
-            <p>{{hero.armor}}</p>
-            <p>{{hero.mount}}</p>
-            <p>{{hero.possessions}}</p>
-            <p>{{hero.home}}</p>
-            <p>{{hero.race}}</p>
-        </div>
-
-        {% endfor %}
-
-		<p>
-			Hammock letterpress prism dreamcatcher truffaut shabby chic vice
-			cold-pressed. Franzen pug fashion axe before they sold out, tumblr irony
-			kogi actually af bushwick banh mi. Snackwave bicycle rights tofu
-			dreamcatcher tote bag pour-over meditation raw denim fanny pack. Pop-up
-			retro taiyaki meditation twee gastropub VHS etsy. Semiotics gochujang
-			street art normcore, edison bulb farm-to-table pour-over taxidermy
-			brooklyn.
-		</p>
-
-	</main>
-</body>
-
+    <main>
+      <h1 id="heading">Adventure Planner</h1>
+      <div class="card">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+          asperiores consequatur inventore reprehenderit! Blanditiis sapiente
+          magni ea placeat non quod!
+        </p>
+      </div>
+    </main>
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <!-- My own JavaScript 
+    <script>
+      $(document).ready(function () {
+        $("#heading").css("color", "blue").css("margin-left", "50px");
+        $("p")
+          .css("font-size", "14x")
+          .css("margin", "10px")
+          .css("font-size", "15px");
+        $(".card")
+          .css("background-color", "lime")
+          .css("box-shadow", "10px 10px 5px 0px rgba(0,0,0,0.75)")
+          .css("padding", "10px");
+      });
+    </script> -->
+  </body>
 </html>
