@@ -16,32 +16,35 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 	<!-- My CSS -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-	<title>Adventure Set</title>
+	<title>Hero Set</title>
 </head>
 
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-2">
 			<a href="{{url_for('get_heroes')}}" class="brand-logo">
-				<span class="logo-text dark-text">Adventure Set</span>
+				<span class="logo-text dark-text">Hero Set</span>
 			</a>
-			<ul class="right hide-on-med-and-down">
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<a href="{{url_for('get_heroes')}}">
-						<span>Home</span>
 						<i class="fas fa-home"></i>
+						<span>Home</span>
+
 					</a>
 				</li>
 				<li>
 					<a href="{{url_for('add_hero')}}">
-						<span>Create Hero</span>
 						<i class="fas fa-fist-raised"></i>
+						<span>Create Hero</span>
+
 					</a>
 				</li>
 				<li>
 					<a href="{{url_for('get_adventure')}}">
-						<span>Adventures</span>
 						<i class="fas fa-chess-rook"></i>
+						<span>Adventures</span>
+
 					</a>
 				</li>
 			</ul>
@@ -65,38 +68,36 @@
 			<li>
 				<img src="{{ url_for('static', filename='images/adventurer_team.jpg') }}" alt="">
 				<div class="caption center-align">
-					<a href="#">
-						<h2 class="heading">Adventure Set</h2>
-					</a>
-					<h5 class="light grey-text text-lighten-3 hide-on-small-only">Welcome to Adventure set, home of your roleplay characters</h5>
-                    <a href="#" class="btn btn-large">Learn More</a>
+
+					<h2 class="headings light grey-text text-lighten-4">Hero Set, home of roleplay characters</h2>
+					<h5 class="headings light grey-text text-lighten-4 hide-on-small-only">Create your heroes ahead of
+						your
+						adventures</h5>
+				</div>
+			</li>
+			<li>
+				<img src="{{ url_for('static', filename='images/tavern.jpg') }}" alt="">
+				<div class="caption left-align">
+					<h2 class="headings light grey-text text-lighten-4">Ever forgot arrows for your elven longbow?
+					</h2>
+					<h5 class="headings light grey-text text-lighten-4 hide-on-small-only">Plan ahead with guidance from
+						the
+						dungeon master, and discuss with your team</h5>
 				</div>
 			</li>
 			<li>
 				<img src="{{ url_for('static', filename='images/adventurer_team2.jpg') }}" alt="">
-				<div class="caption left-align">
-					<a href="#">
-						<h2 class="heading">Adventure Set</h2>
-					</a>
-					<h5 class="light grey-text text-lighten-3 hide-on-small-only">With help from MongoDB, your heroes are stored safely, and you can plan out your next adventure</h5>
-					<a href="#" class="btn btn-large">Learn More</a>
-				</div>
-			</li>
-			<li>
-				<img src="{{ url_for('static', filename='images/adventurer_team3.jpg') }}" alt="">
 				<div class="caption right-align">
-					<a><h2 class="heading">Adventure Set</h2></a>
-					<h5 class="light grey-text text-lighten-3 hide-on-small-only">Friends can set characters by themselves, and each will be visible here to each other, and the dungeon-master</h5>
-					<a href="#" class="btn btn-large">Learn More</a>
+					<h2 class="headings light grey-text text-lighten-4">Safely Stored at MongoDB</h2>
+					<h5 class="headings light grey-text text-lighten-4 hide-on-small-only">Create, update and delete
+						your heroes as the adventures goes by</h5>
 				</div>
 			</li>
 		</ul>
 	</section>
 	<main>
-		<h1>Adventure Set</h1>
-		<div class="container">
-			{% block content %} {% endblock %}
-		</div>
+		<h1>Hero Set</h1>
+		{% block content %} {% endblock %}
 	</main>
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
