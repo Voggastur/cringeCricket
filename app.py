@@ -14,8 +14,6 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'adventurers'
 # SECRET_KEY variable
 app.config["MONGO_URI"] = os.environ.get('SECRET_KEY')
-# File Upload Config
-app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
 
 mongo = PyMongo(app)
 
@@ -30,7 +28,7 @@ def get_heroes():
 
 @app.route('/add_hero')
 def add_hero():
-    return render_template('addhero.html',
+    return render_template('add_hero.html',
                            heroes=mongo.db.heroes.find(),
                            adventures=mongo.db.adventures.find())
 
@@ -46,7 +44,7 @@ def insert_hero():
 def edit_hero(hero_id):
     the_hero = mongo.db.heroes.find_one({"_id": ObjectId(hero_id)})
     all_adventures = mongo.db.adventures.find()
-    return render_template('edithero.html', hero=the_hero,
+    return render_template('edit_hero.html', hero=the_hero,
                            adventures=all_adventures)
 
 

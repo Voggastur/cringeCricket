@@ -22,26 +22,26 @@
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-2">
-			<a href="{{url_for('get_heroes')}}" class="brand-logo">
-				<span class="logo-text dark-text">Hero Set</span>
+			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2">
+				Hero Set
 			</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
-					<a href="{{url_for('get_heroes')}}">
+					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
 						<i class="fas fa-home"></i>
 						<span>Home</span>
 
 					</a>
 				</li>
 				<li>
-					<a href="{{url_for('add_hero')}}">
-						<i class="fas fa-fist-raised"></i>
+					<a class="grey-text text-lighten-2" href="{{url_for('add_hero')}}">
+						<i class="fa fa-user-plus"></i>
 						<span>Create Hero</span>
 
 					</a>
 				</li>
 				<li>
-					<a href="{{url_for('get_adventure')}}">
+					<a class="grey-text text-lighten-2" href="{{url_for('get_adventure')}}">
 						<i class="fas fa-chess-rook"></i>
 						<span>Adventures</span>
 
@@ -53,50 +53,51 @@
 						<i class="fas fa-home"></i>
 					</a></li>
 				<li><a href="{{url_for('add_hero')}}">
-						<i class="fas fa-fist-raised"></i>
+						<i class="fa fa-user-plus"></i>
 					</a></li>
 				<li><a href="{{url_for('get_adventure')}}">
 						<i class="fas fa-chess-rook"></i>
 					</a></li>
 			</ul>
 		</nav>
-
 	</header>
+
 	<!-- Section: Slider -->
 	<section class="slider">
 		<ul class="slides">
 			<li>
-				<img src="{{ url_for('static', filename='images/adventurer_team.jpg') }}" alt="">
+				<img src="{{ url_for('static', filename='images/adventurer_team.jpg') }}" alt="Imposing band of heroes">
 				<div class="caption center-align">
 
-					<h2 class="headings light grey-text text-lighten-4">Hero Set, home of roleplay characters</h2>
-					<h5 class="headings light grey-text text-lighten-4 hide-on-small-only">Create your heroes ahead of
+					<h2 class="heading1 grey-text text-lighten-4">Hero Set, home of roleplay characters</h2>
+					<h5 class="heading2 grey-text text-lighten-4 hide-on-small-only">Create your heroes ahead of
 						your
 						adventures</h5>
 				</div>
 			</li>
 			<li>
-				<img src="{{ url_for('static', filename='images/tavern.jpg') }}" alt="">
-				<div class="caption left-align">
-					<h2 class="headings light grey-text text-lighten-4">Ever forgot arrows for your elven longbow?
+				<img src="{{ url_for('static', filename='images/tavern.jpg') }}" alt="Characters sitting around in a medieval tavern">
+				<div class="caption right-align">
+					<h2 class="heading1 grey-text text-lighten-4">Forgot arrows for your longbow?
 					</h2>
-					<h5 class="headings light grey-text text-lighten-4 hide-on-small-only">Plan ahead with guidance from
-						the
+					<h5 class="heading2 grey-text text-lighten-4 hide-on-small-only">Plan ahead with guidance from
+						your
 						dungeon master, and discuss with your team</h5>
 				</div>
 			</li>
 			<li>
-				<img src="{{ url_for('static', filename='images/adventurer_team2.jpg') }}" alt="">
-				<div class="caption right-align">
-					<h2 class="headings light grey-text text-lighten-4">Safely Stored at MongoDB</h2>
-					<h5 class="headings light grey-text text-lighten-4 hide-on-small-only">Create, update and delete
-						your heroes as the adventures goes by</h5>
+				<img src="{{ url_for('static', filename='images/adventurer_team4.jpg') }}" alt="Group of heroes">
+				<div class="caption left-align">
+					<h2 class="heading1 grey-text text-lighten-4">Safely Stored at MongoDB</h2>
+					<h5 class="heading2 grey-text text-lighten-4 hide-on-small-only">Proudly update your heroes as time goes by</h5>
 				</div>
 			</li>
 		</ul>
 	</section>
+
+	<hr class="divider">
+
 	<main>
-		<h1>Hero Set</h1>
 		{% block content %} {% endblock %}
 	</main>
 	<!-- jQuery CDN -->

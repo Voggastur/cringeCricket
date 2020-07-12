@@ -1,37 +1,39 @@
 /* General and Nav */
 
-body {
-    margin: 0;
-    padding: 0;
+* {
+  font-family: "Special Elite", cursive;
+  margin: 0;
+  padding: 0;
 }
 
-nav {
-  font-family: "Special Elite", cursive;
+.logo-text {
+    margin-left: 50px;
 }
 
 /* Slider Section */
 
-img {
-    size: cover;
+.heading1,
+.heading2 {
+  font-weight: bold;
+  text-shadow: 0px 0px #fff;
+  transition: text-shadow 0.3s ease;
 }
 
-.slider {
-    margin: 0;
-    padding: 0;
-    top: 0;
+.heading1:hover,
+.heading2:hover {
+    cursor: pointer;
+  text-shadow: 5px 5px #a0a0a0;
 }
 
-.headings {
-    font-family: "Special Elite", cursive;
-    -webkit-box-shadow: 5px 5px 15px 50px #bdbdbd;
-    -moz-box-shadow: 5px 5px 15px 50px #bdbdbd;
-    box-shadow: 5px 5px 15px 50px #bdbdbd;
+.divider {
+  height: 50px;
 }
 
-/* Hero Cards */
+/* Hero Tables*/
 
 .card {
   font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
 }
 
 /* Modal */

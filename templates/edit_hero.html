@@ -9,14 +9,14 @@
 				<select id="adventures" name="adventure_name">
                   <option value="" disabled selected>Choose Adventure</option>
                   {% for mission in adventures %}
-                      {% if mission.adventure_name == heroes.adventure_name %}
+                      {% if mission.adventure_name == hero.adventure_name %}
                       <option value="{{mission.adventure_name}}" selected >{{mission.adventure_name}}</option>
                       {% else %}
                        <option value="{{mission.adventure_name}}">{{mission.adventure_name}}</option>
                     {% endif %}
                   {% endfor %}
                 </select>
-				<label>Hero Adventure</label>
+				<label for="adventures">Hero Set</label>
 			</div>
 		</div>
 		<div class="row">
@@ -72,7 +72,7 @@
 			<div class="input-field col s12">
 				<i class="fas fa-shopping-bag"></i>
 				<textarea name="possessions" id="possessions" class="materialize-textarea">{{heroes.possessions}}</textarea>
-				<label for="possessions">Hero Possessions</label>
+				<label for="possessions">Hero possessions</label>
 			</div>
 		</div>
 		<div class="row">
