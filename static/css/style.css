@@ -6,34 +6,38 @@
   padding: 0;
 }
 
-.logo-text {
-    margin-left: 50px;
+.brand-logo {
+  margin-left: 20px;
 }
 
 /* Slider Section */
 
 .heading1,
 .heading2 {
+  display: inline-block;
   font-weight: bold;
-  text-shadow: 0px 0px #fff;
+  text-shadow: 1px 1px #ccc;
   transition: text-shadow 0.3s ease;
 }
 
 .heading1:hover,
 .heading2:hover {
-    cursor: pointer;
-  text-shadow: 5px 5px #a0a0a0;
+  cursor: pointer;
+  text-shadow: 2px 2px #aaa;
 }
 
 .divider {
   height: 50px;
 }
 
+.adv-divider {
+    margin: 15px 5px 10px;
+}
+
 /* Hero Tables*/
 
 .card {
-  font-family: "Montserrat", sans-serif;
-  margin-bottom: 20px;
+  font-family: "Special Elite", cursive;
 }
 
 /* Modal */

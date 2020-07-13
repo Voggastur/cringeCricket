@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $(".modal").modal();
   $('select').formSelect();
+  $('.card').css('margin-bottom', '40px');
   const slider = document.querySelector(".slider");
   M.Slider.init(slider, {
     indicators: false,
