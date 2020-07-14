@@ -12,18 +12,14 @@
 
 /* Slider Section */
 
-.heading1,
-.heading2 {
-  display: inline-block;
+.heading1 {
   font-weight: bold;
-  text-shadow: 1px 1px #ccc;
-  transition: text-shadow 0.3s ease;
+  text-shadow: 1px 1px #aaa;
 }
 
 .heading1:hover,
 .heading2:hover {
   cursor: pointer;
-  text-shadow: 2px 2px #aaa;
 }
 
 .divider {
@@ -31,7 +27,7 @@
 }
 
 .adv-divider {
-    margin: 15px 5px 10px;
+    margin: 15px 5px;
 }
 
 /* Hero Tables*/
