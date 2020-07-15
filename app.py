@@ -107,7 +107,8 @@ def insert_adventure():
 
 @app.route('/add_adventure')
 def add_adventure():
-    return render_template('add_adventure.html')
+    return render_template('add_adventure.html',
+                           adventures=mongo.db.adventures.find())
 
 
 if __name__ == '__main__':

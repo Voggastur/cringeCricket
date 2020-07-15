@@ -22,22 +22,19 @@
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-2">
-			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2">
-				Hero Set
-			</a>
+			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2"><i class="fas fa-jedi"></i>
+				Hero Set</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
 						<i class="fas fa-home"></i>
 						<span>Home</span>
-
 					</a>
 				</li>
 				<li>
 					<a class="grey-text text-lighten-2" href="{{url_for('add_hero')}}">
 						<i class="fa fa-user-plus"></i>
 						<span>Create Hero</span>
-
 					</a>
 				</li>
 				<li>
@@ -89,17 +86,24 @@
 				<img src="{{ url_for('static', filename='images/medieval_death.jpg') }}" alt="Group of heroes">
 				<div class="caption left-align">
 					<h2 class="heading1 grey-text text-lighten-3">Safely Stored at MongoDB</h2>
-					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Update your heroes progress as time goes by</h5>
+					<h5 class="heading2 grey-text text-lighten-3 hide-on-small-only">Update your heroes progress as time
+						goes by</h5>
 				</div>
 			</li>
 		</ul>
 	</section>
 
-	<hr class="divider">
+	<h6 class="divider valign-wrapper"><span class="center-align"> Heroes</span></h6>
 
-	<main>
+	<section>
 		{% block content %} {% endblock %}
-	</main>
+	</section>
+
+	<!-- Footer -->
+	<footer class="section blue-grey darken-2 grey-text text-lighten-2 center">
+		<p class="flow-text">Adventure Plan 2020</p>
+	</footer>
+
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
 		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>

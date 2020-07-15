@@ -1,45 +1,71 @@
 /* General and Nav */
 
-* {
+html,
+body {
   font-family: "Special Elite", cursive;
   margin: 0;
   padding: 0;
 }
 
+nav {
+  font-family: "Special Elite", cursive;
+}
+
 .brand-logo {
+  display: inline-block;
   margin-left: 20px;
+}
+
+.brand-logo i {
+  display: inline-block;
+  padding: 10px;
+  vertical-align: middle;
 }
 
 /* Slider Section */
 
 .heading1 {
+  font-family: "Grenze Gotisch", cursive;
   font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 2px 2px #aaa;
+}
+
+.heading2 {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
   text-shadow: 1px 1px #aaa;
 }
 
-.heading1:hover,
-.heading2:hover {
-  cursor: pointer;
-}
-
 .divider {
+  display: block;
+  background: linear-gradient(to right, #90a4ae, #fff, #90a4ae);
   height: 50px;
 }
 
 .adv-divider {
-    margin: 15px 5px;
+  color: #fff;
+  margin: 20px 10px;
 }
 
-/* Hero Tables*/
+/* Hero Cards */
 
 .card {
-  font-family: "Special Elite", cursive;
+  font-family: "Oswald", sans-serif;
+  margin: 20px;
+}
+
+.card-items h6 {
+  display: block;
+  text-align: left;
+  margin-left: 10px;
 }
 
 /* Modal */
 
 .modal {
-  font-family: "Special Elite", cursive;
+  font-family: "Oswald", sans-serif;
 }
 
 /* Large screens */
@@ -48,4 +74,7 @@
 
 /* Small screens */
 @media screen and (max-width: 600px) {
+  .brand-logo {
+    margin-right: 20px;
+  }
 }
