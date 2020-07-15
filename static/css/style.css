@@ -7,41 +7,43 @@ body {
   padding: 0;
 }
 
-nav {
+nav ul li a,
+nav .brand-logo {
   font-family: "Special Elite", cursive;
 }
 
 .brand-logo {
-  display: inline-block;
   margin-left: 20px;
 }
 
 .brand-logo i {
   display: inline-block;
-  padding: 10px;
-  vertical-align: middle;
+  margin: 10px;
+  font-size: 1.5em;
 }
 
 /* Slider Section */
 
-.heading1 {
+.caption1 {
   font-family: "Grenze Gotisch", cursive;
   font-weight: bold;
-  font-size: 1.5em;
-  text-shadow: 2px 2px #aaa;
+  text-shadow: 3px 3px #aaa;
 }
 
-.heading2 {
-  font-family: "Oswald", sans-serif;
-  font-weight: bold;
-  font-size: 1.2em;
+.caption2 {
+  font-family: "Grenze Gotisch", cursive;
   text-shadow: 1px 1px #aaa;
 }
 
 .divider {
-  display: block;
+  height: 100px;
+  width: 100vw;
   background: linear-gradient(to right, #90a4ae, #fff, #90a4ae);
-  height: 50px;
+}
+
+.divider h1 {
+  display: block;
+  margin: 0 auto;
 }
 
 .adv-divider {
