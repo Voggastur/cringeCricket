@@ -23,7 +23,8 @@
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-2">
-			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2"><i class="fas fa-jedi"></i><span class="hide-on-small-only">Hero Set</span></a>
+			<a href="{{url_for('get_heroes')}}"
+				class="brand-logo left grey-text text-lighten-2"><span>Hero Set</span></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
@@ -73,9 +74,7 @@
 				<div class="caption right-align">
 					<h2 class="caption1 grey-text text-lighten-3">Forgot arrows for your longbow?
 					</h2>
-					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Plan ahead with guidance from
-						your
-						dungeon master, and discuss with your team</h5>
+					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Plan ahead and discuss with your team</h5>
 				</div>
 			</li>
 			<li>
@@ -89,11 +88,10 @@
 		</ul>
 	</section>
 
-	<section class="divider valign-wrapper">
-		<h1>Heroes</h1>
-	</section>
-
-	<section>
+	<section class="linear-gradients">
+		<header class="divider valign-wrapper">
+			<h1>Heroes</h1>
+		</header>
 		<div class="row">
 			<!-- Hero Card Paste-->
 			<div
@@ -338,7 +336,7 @@
 		</div>
 	</section>
 	<!-- Footer -->
-	<footer class="section blue-grey darken-2 grey-text text-lighten-2 center">
+	<footer class="blue-grey darken-2 grey-text text-lighten-2 center">
 		<p class="flow-text">Adventure Plan 2020</p>
 	</footer>
 	<!-- jQuery CDN -->

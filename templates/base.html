@@ -23,8 +23,8 @@
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-2">
-			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2"><i class="fas fa-jedi"></i>
-				Hero Set</a>
+			<a href="{{url_for('get_heroes')}}"
+				class="brand-logo grey-text text-lighten-2"><span><i class="fas fa-jedi hide-on-med-and-down left"></i> Hero Set<i class="fas fa-jedi hide-on-med-and-down right"></i></span></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
@@ -94,16 +94,12 @@
 		</ul>
 	</section>
 
-	<section class="divider">
-		<h1 class="center-align blue-grey-text text-darken-2">Heroes</h1>
-	</section>
-
-	<section>
+	<section class="linear-gradients">
 		{% block content %} {% endblock %}
 	</section>
 
 	<!-- Footer -->
-	<footer class="section blue-grey darken-2 grey-text text-lighten-2 center">
+	<footer class="blue-grey darken-2 grey-text text-lighten-2 center">
 		<p class="flow-text">Adventure Plan 2020</p>
 	</footer>
 

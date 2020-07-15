@@ -9,7 +9,7 @@
     <div class="row">
       <div class="input-field col s12">
         <select id="adventure" name="adventure_name">
-          <option value="" disabled selected>Pick adventure</option>
+          <option value="" class="grey-text text-lighten-3" disabled selected>Pick adventure</option>
           {% for adventure in adventures %}
           <option value="{{adventure.adventure_name}}"
             >{{adventure.adventure_name}}</option

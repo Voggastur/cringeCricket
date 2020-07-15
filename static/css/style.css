@@ -1,7 +1,6 @@
 /* General and Nav */
 
-html,
-body {
+* {
   font-family: "Special Elite", cursive;
   margin: 0;
   padding: 0;
@@ -13,11 +12,10 @@ nav .brand-logo {
 }
 
 .brand-logo {
-  margin-left: 20px;
+  padding: 5px;
 }
 
 .brand-logo i {
-  display: inline-block;
   margin: 10px;
   font-size: 1.5em;
 }
@@ -36,9 +34,9 @@ nav .brand-logo {
 }
 
 .divider {
+  text-decoration: underline;
+  background: none;
   height: 100px;
-  width: 100vw;
-  background: linear-gradient(to right, #90a4ae, #fff, #90a4ae);
 }
 
 .divider h1 {
@@ -46,11 +44,22 @@ nav .brand-logo {
   margin: 0 auto;
 }
 
+.linear-gradients {
+  background: linear-gradient(217deg, #ff0000cc, #ff000000 40%),
+    linear-gradient(127deg, #00ff00cc, #00ff0000 40%),
+    linear-gradient(336deg, #0000ffcc, #0000ff00 40%);
+}
+
+.linear-gradients .row {
+  margin-bottom: 0;
+}
+
 .adv-divider {
   color: #fff;
   margin: 20px 10px;
 }
 
+/* background: linear-gradient(to right, #90a4ae, #fff, #90a4ae); */
 /* Hero Cards */
 
 .card {
@@ -58,10 +67,11 @@ nav .brand-logo {
   margin: 20px;
 }
 
-.card-items h6 {
+.card-items p {
   display: block;
   text-align: left;
   margin-left: 10px;
+  font-size: 0.9em;
 }
 
 /* Modal */
@@ -78,5 +88,17 @@ nav .brand-logo {
 @media screen and (max-width: 600px) {
   .brand-logo {
     margin-right: 20px;
+  }
+  .caption1 {
+    font-family: "Grenze Gotisch", cursive;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-shadow: 3px 3px #aaa;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .brand-logo span { /* Minimizing brand-logo for the smallest Galaxy Fold screen size(284px), to avoid overriding other nav elements */
+    font-size: 0.8em;
   }
 }
