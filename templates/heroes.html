@@ -1,30 +1,32 @@
 {% extends 'base.html'%} {% block content %}
-<header class="divider valign-wrapper">
+<header class="jinja-header valign-wrapper">
 	<h1>Heroes</h1>
 </header>
+
 <div class="container">
 	<div class="row">
 		{% for hero in heroes %}
-		<div class="col m4 offset-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
+        <!-- Hero Card -->
+		<div class="col m4 offset-m1 s10 offset-s1 card hoverable blue-grey darken-1 grey-text text-lighten-3">
 			<div class="card-items">
-				<p><i class="fas fa-pen"></i> Hero Name: {{hero.hero_name}}</p>
-				<p><i class="fas fa-user"></i> Race: {{hero.race}}</p>
-				<p><i class="fas fa-home"></i> Home: {{hero.home}}</p>
+				<p><i class="fas fa-pen"></i><span>Hero Name:</span> {{hero.hero_name}}</p>
+				<p><i class="fas fa-user"></i><span>Race:</span> {{hero.race}}</p>
+				<p><i class="fas fa-home"></i><span>Home:</span> {{hero.home}}</p>
 				<p>
-					<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
+					<i class="fas fa-wrench"></i><span>Profession:</span> {{hero.profession}}
 				</p>
-				<p><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</p>
-				<p><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</p>
-				<p><i class="fas fa-horse"></i> Mount: {{hero.mount}}</p>
+				<p><i class="fas fa-fist-raised"></i><span>Weapon(s):</span> {{hero.weapon}}</p>
+				<p><i class="fas fa-shield-alt"></i><span>Armor:</span> {{hero.armor}}</p>
+				<p><i class="fas fa-horse"></i><span>Mount:</span> {{hero.mount}}</p>
 				<p>
-					<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
+					<i class="fas fa-shopping-bag"></i><span>Possessions:</span> {{hero.possessions}}
 				</p>
 				<p>
-					<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
+					<i class="fas fa-chess-rook"></i><span>Adventure:</span> {{hero.adventure_name}}
 				</p>
 			</div>
 			<!-- Hero Card Footer -->
-			<div class="card-action left-align">
+			<div class="card-action center-align">
 				<a href="{{url_for('edit_hero', hero_id=hero._id)}}"
 					class="waves-effect btn green"><i class="fas fa-user-edit"></i> Edit
 				</a>
@@ -44,6 +46,7 @@
 				</div>
 			</div>
 		</div>
+        <!-- End Hero Card -->
 		{% endfor %}
 	</div>
 </div>

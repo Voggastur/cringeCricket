@@ -16,59 +16,58 @@
 </head>
 
 <body>
-
-
-
-	<div class="navbar-fixed">
-		<nav class="light-green darken-2">
-			<div class="container">
-				<div class="nav-wrapper">
-					<a href="#!" class="brand-logo flow-text">Hero Set</a>
-					<a href="#" data-target="mobile-demo" class="sidenav-trigger"></a>
-					<ul class="right hide-on-med-and-down">
-						<li>
-							<a href="{{url_for('get_heroes')}}">
-								<span class="flow-text">Home</span>
-								<i class="fas fa-home"></i>
-							</a>
-						</li>
-						<li>
-							<a href="{{url_for('add_hero')}}">
-								<span class="flow-text">Create Hero</span>
-								<i class="fas fa-user"></i>
-							</a>
-						</li>
-						<li>
-							<a href="{{url_for('get_adventure')}}">
-								<span class="flow-text">Adventures</span>
-								<i class="fas fa-chess-rook"></i>
-							</a>
-						</li>
-					</ul>
+	<header>
+		<div class="navbar-fixed">
+			<nav class="light-green darken-2">
+				<div class="container">
+					<div class="nav-wrapper">
+						<a href="#!" class="brand-logo flow-text">Hero Set</a>
+						<a href="#" data-target="mobile-demo" class="sidenav-trigger"></a>
+						<ul class="right hide-on-med-and-down">
+							<li>
+								<a href="{{url_for('get_heroes')}}">
+									<span class="flow-text">Home</span>
+									<i class="fas fa-home"></i>
+								</a>
+							</li>
+							<li>
+								<a href="{{url_for('add_hero')}}">
+									<span class="flow-text">Create Hero</span>
+									<i class="fas fa-user"></i>
+								</a>
+							</li>
+							<li>
+								<a href="{{url_for('get_adventure')}}">
+									<span class="flow-text">Adventures</span>
+									<i class="fas fa-chess-rook"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</nav>
-	</div>
-	<ul class="sidenav" id="mobile-demo">
-		<li>
-			<a href="{{url_for('get_heroes')}}">
-				<span>Home</span>
-				<i class="fas fa-home"></i>
-			</a>
-		</li>
-		<li>
-			<a href="{{url_for('add_hero')}}">
-				<span>Create New Hero</span>
-				<i class="fas fa-user"></i>
-			</a>
-		</li>
-		<li>
-			<a href="{{url_for('get_adventure')}}">
-				<span>Check Adventures</span>
-				<i class="fas fa-chess-rook"></i>
-			</a>
-		</li>
-	</ul>
+			</nav>
+		</div>
+		<ul class="sidenav" id="mobile-demo">
+			<li>
+				<a href="{{url_for('get_heroes')}}">
+					<span>Home</span>
+					<i class="fas fa-home"></i>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('add_hero')}}">
+					<span>Create New Hero</span>
+					<i class="fas fa-user"></i>
+				</a>
+			</li>
+			<li>
+				<a href="{{url_for('get_adventure')}}">
+					<span>Check Adventures</span>
+					<i class="fas fa-chess-rook"></i>
+				</a>
+			</li>
+		</ul>
+	</header>
 
 	<!-- Section: Slider -->
 	<section class="slider">

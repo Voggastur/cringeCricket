@@ -7,9 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<!-- Fontawesome Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-	<!-- Google Fonts -->
+	<!-- Google Fonts 'Grenze Gotisch', 'Special Elite', 'Roboto' -->
 	<link
-		href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&family=Oswald&family=Special+Elite&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500;600&family=Roboto:wght@300;500&family=Special+Elite&display=swap"
 		rel="stylesheet">
 	<!-- My shortcut icon -->
 	<link rel="shortcut icon" type="image/jpg" href="static/images/favicon.ico" />
@@ -22,9 +22,9 @@
 
 <body>
 	<header>
-		<nav class="nav-wrapper blue-grey darken-2">
+		<nav class="nav-wrapper blue-grey darken-1">
 			<a href="{{url_for('get_heroes')}}"
-				class="brand-logo left grey-text text-lighten-2"><span>Hero Set</span></a>
+				class="brand-logo grey-text text-lighten-2 left"><span> Hero Set</span></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
@@ -60,11 +60,11 @@
 	<section class="slider">
 		<ul class="slides">
 			<li>
-				<img src="static/images/adventurer_team4.jpg" alt="Hiding band of heroes in the desert">
+				<img src="static/images/adventurer_team.jpg" alt="Hiding band of heroes in the desert">
 				<div class="caption center-align">
 
-					<h2 class="caption1 grey-text text-lighten-3">Hero Set, home of roleplay characters</h2>
-					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Create your heroes ahead of
+					<h2 class="caption1 grey-text text-lighten-4">Hero Set, home of roleplay characters</h2>
+					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">Create your heroes ahead of
 						your
 						adventures</h5>
 				</div>
@@ -72,49 +72,49 @@
 			<li>
 				<img src="static/images/tavern.jpg" alt="People talking around table in a medieval tavern">
 				<div class="caption right-align">
-					<h2 class="caption1 grey-text text-lighten-3">Forgot arrows for your longbow?
+					<h2 class="caption1 grey-text text-lighten-4">Ever forgot arrows for your longbow?
 					</h2>
-					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Plan ahead and discuss with your team</h5>
+					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">The game-master can be a nuisance,
+						plan ahead and discuss with your team</h5>
 				</div>
 			</li>
 			<li>
-				<img src="static/images/hero_travel.jpg" alt="Dying hero with ravens circling above">
+				<img src="static/images/hero_travel.jpg" alt="Band of travellers in desert strolling away from a city">
 				<div class="caption left-align">
-					<h2 class="caption1 grey-text text-lighten-3">Safely Stored at MongoDB</h2>
-					<h5 class="caption2 grey-text text-lighten-3 hide-on-small-only">Update your heroes progress as time
-						goes by</h5>
+					<h2 class="caption1 grey-text text-lighten-4">Safely Stored at MongoDB</h2>
+					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">Update your heroes over time, and
+						add new adventures for the future</h5>
 				</div>
 			</li>
 		</ul>
 	</section>
 
-	<section class="linear-gradients">
-		<header class="divider valign-wrapper">
+	<section class="linear-gradients jinja-section">
+		<header class="jinja-header valign-wrapper">
 			<h1>Heroes</h1>
 		</header>
 		<div class="row">
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
+			<!-- Hero Card -->
+			<div class="col m4 offset-m1 s10 offset-s1 card hoverable blue-grey darken-1 grey-text text-lighten-3">
 				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
+					<p><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</p>
+					<p><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
+					<p><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
+					<p>
+						<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
+					</p>
+					<p><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}</p>
+					<p><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
+					<p><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
+					<p>
+						<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
+					</p>
+					<p>
+						<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
+					</p>
 				</div>
 				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
+				<div class="card-action center-align">
 					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
 						Edit
 					</a>
@@ -123,28 +123,27 @@
 				</div>
 			</div>
 			<!-- End of Card Structure -->
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
+			<!-- Hero Card -->
+			<div class="col m4 offset-m1 s10 offset-s1 card hoverable blue-grey darken-1 grey-text text-lighten-3">
 				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
+					<p><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</p>
+					<p><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
+					<p><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
+					<p>
+						<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
+					</p>
+					<p><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}</p>
+					<p><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
+					<p><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
+					<p>
+						<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
+					</p>
+					<p>
+						<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
+					</p>
 				</div>
 				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
+				<div class="card-action center-align">
 					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
 						Edit
 					</a>
@@ -153,28 +152,27 @@
 				</div>
 			</div>
 			<!-- End of Card Structure -->
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
+			<!-- Hero Card -->
+			<div class="col m4 offset-m1 s10 offset-s1 card hoverable blue-grey darken-1 grey-text text-lighten-3">
 				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
+					<p><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</p>
+					<p><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
+					<p><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
+					<p>
+						<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
+					</p>
+					<p><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}</p>
+					<p><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
+					<p><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
+					<p>
+						<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
+					</p>
+					<p>
+						<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
+					</p>
 				</div>
 				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
+				<div class="card-action center-align">
 					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
 						Edit
 					</a>
@@ -183,149 +181,28 @@
 				</div>
 			</div>
 			<!-- End of Card Structure -->
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
+			<!-- Hero Card -->
+			<div class="col m4 offset-m1 s10 offset-s1 card hoverable blue-grey darken-1 grey-text text-lighten-3">
 				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
+					<p><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</p>
+					<p><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
+					<p><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
+					<p>
+						<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
+					</p>
+					<p><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}</p>
+					<p><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
+					<p><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
+					<p>
+						<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
+					</p>
+					<p>
+						<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
+					</p>
 				</div>
 				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
-					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-						Edit
-					</a>
-					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-						Delete</a>
-				</div>
-			</div>
-			<!-- End of Card Structure -->
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
-				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
-				</div>
-				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
-					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-						Edit
-					</a>
-					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-						Delete</a>
-				</div>
-			</div>
-			<!-- End of Card Structure -->
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
-				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
-				</div>
-				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
-					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-						Edit
-					</a>
-					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-						Delete</a>
-				</div>
-			</div>
-			<!-- End of Card Structure -->
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
-				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
-				</div>
-				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
-					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-						Edit
-					</a>
-					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-						Delete</a>
-				</div>
-			</div>
-			<!-- End of Card Structure -->
-			<!-- Hero Card Paste-->
-			<div
-				class="col m3 push-m1 pull-m1 s10 offset-s1 card hoverable blue-grey darken-2 grey-text text-lighten-3">
-				<div class="card-items">
-					<h6><i class="fas fa-pen"></i> Hero Name: {{hero.name}}</h6>
-					<h6><i class="fas fa-user"></i> Race: {{hero.race}}</h6>
-					<h6><i class="fas fa-home"></i> Home: {{hero.home}}</h6>
-					<h6>
-						<i class="fas fa-hand-holding"></i> Profession: {{hero.profession}}
-					</h6>
-					<h6><i class="fas fa-fist-raised"></i> Weapon(s): {{hero.weapon}}</h6>
-					<h6><i class="fas fa-shield-alt"></i> Armor: {{hero.armor}}</h6>
-					<h6><i class="fas fa-horse"></i> Mount: {{hero.mount}}</h6>
-					<h6>
-						<i class="fas fa-shopping-bag"></i> Possessions: {{hero.possessions}}
-					</h6>
-					<h6>
-						<i class="fas fa-chess-rook"></i> Adventure: {{hero.adventure_name}}
-					</h6>
-				</div>
-				<!-- Hero Card Footer -->
-				<div class="card-action left-align">
-					<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
+				<div class="card-action center-align">
+					<a href="#editing" class="waves-effect btn green"><i class="fas fa-user-edit"></i>
 						Edit
 					</a>
 					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
@@ -336,8 +213,8 @@
 		</div>
 	</section>
 	<!-- Footer -->
-	<footer class="blue-grey darken-2 grey-text text-lighten-2 center">
-		<p class="flow-text">Adventure Plan 2020</p>
+	<footer class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper">
+		<p class="flow-text">Hero Set 2020</p>
 	</footer>
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"

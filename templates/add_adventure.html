@@ -1,6 +1,8 @@
-{% extends 'base.html'%}
-{% block content %}
-<h3>Add Adventure</h3>
+{% extends 'base.html'%} {% block content %}
+<header class="jinja-header valign-wrapper">
+	<h1>Add new adventure</h1>
+</header>
+
 <form action="{{ url_for('insert_adventure') }}" method="POST" class="col s8 offset-s2">
 	<div class="row">
 		<div class="input-field col s12 white-text">

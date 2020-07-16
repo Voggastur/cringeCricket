@@ -6,40 +6,35 @@
   padding: 0;
 }
 
-nav ul li a,
-nav .brand-logo {
-  font-family: "Special Elite", cursive;
-}
-
-.brand-logo {
-  padding: 5px;
-}
-
-.brand-logo i {
-  margin: 10px;
+.link-text,
+.brand-logo span {
   font-size: 1.5em;
+  margin-left: 10px;
 }
 
 /* Slider Section */
 
 .caption1 {
   font-family: "Grenze Gotisch", cursive;
-  font-weight: bold;
-  text-shadow: 3px 3px #aaa;
+  font-size: 3.1em;
+  font-weight: 500;
+  text-shadow: 3px 2px #aaa;
 }
 
 .caption2 {
   font-family: "Grenze Gotisch", cursive;
+  font-weight: 300;
   text-shadow: 1px 1px #aaa;
 }
 
-.divider {
+.jinja-header {
   text-decoration: underline;
   background: none;
   height: 100px;
 }
 
-.divider h1 {
+.jinja-header h1 {
+  font-size: 3em;
   display: block;
   margin: 0 auto;
 }
@@ -48,6 +43,10 @@ nav .brand-logo {
   background: linear-gradient(217deg, #ff0000cc, #ff000000 40%),
     linear-gradient(127deg, #00ff00cc, #00ff0000 40%),
     linear-gradient(336deg, #0000ffcc, #0000ff00 40%);
+}
+
+.jinja-section {
+  padding-bottom: 20px;
 }
 
 .linear-gradients .row {
@@ -59,19 +58,28 @@ nav .brand-logo {
   margin: 20px 10px;
 }
 
-/* background: linear-gradient(to right, #90a4ae, #fff, #90a4ae); */
 /* Hero Cards */
 
 .card {
-  font-family: "Oswald", sans-serif;
-  margin: 20px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.card-items {
+  padding: 2px;
 }
 
 .card-items p {
+  font-family: "Roboto", sans-serif;
   display: block;
-  text-align: left;
-  margin-left: 10px;
-  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0, 2px;
+  font-size: 0, 8em;
+}
+
+.card-items p span {
+  font-weight: 500;
 }
 
 /* Modal */
@@ -80,25 +88,46 @@ nav .brand-logo {
   font-family: "Oswald", sans-serif;
 }
 
+/* Forms */
+
+.form {
+    padding: 10px 0px;
+}
+
+/* Footer */
+
+.adventure-footer {
+    padding: 10px 0px;
+}
+
+.the-real-footer {
+  height: 100px;
+}
+
+.the-real-footer p {
+  display: block;
+  margin: 0 auto;
+  font-size: 2.5em;
+}
+
 /* Large screens */
 @media screen and (min-width: 600px) {
 }
 
 /* Small screens */
 @media screen and (max-width: 600px) {
-  .brand-logo {
-    margin-right: 20px;
-  }
   .caption1 {
-    font-family: "Grenze Gotisch", cursive;
-    font-weight: bold;
-    font-size: 2.5em;
-    text-shadow: 3px 3px #aaa;
+    font-size: 3.6em;
+  }
+  .brand-logo {
+    margin: 0;
   }
 }
 
+/* Minimizing brand-logo for the smallest screen size in Google Dev Tools (Galaxy Fold, 284px width), to avoid overriding other nav elements */
 @media screen and (max-width: 300px) {
-  .brand-logo span { /* Minimizing brand-logo for the smallest Galaxy Fold screen size(284px), to avoid overriding other nav elements */
-    font-size: 0.8em;
+  .brand-logo {
+    margin: 0;
+    font-size: 0.7em;
   }
 }

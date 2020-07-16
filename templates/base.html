@@ -7,10 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<!-- Fontawesome Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-	<!-- Google Fonts -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&family=Oswald&family=Special+Elite&display=swap"
-		rel="stylesheet">
+	<!-- Google Fonts 'Grenze Gotisch', 'Special Elite', 'Roboto'-->
+	<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500;600&family=Roboto:wght@300;500&family=Special+Elite&display=swap" rel="stylesheet">
 	<!-- My shortcut icon -->
 	<link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='images/favicon.ico')}}" />
 	<!-- Materialize CSS -->
@@ -23,8 +21,8 @@
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-2">
-			<a href="{{url_for('get_heroes')}}"
-				class="brand-logo grey-text text-lighten-2"><span><i class="fas fa-jedi hide-on-med-and-down left"></i> Hero Set<i class="fas fa-jedi hide-on-med-and-down right"></i></span></a>
+			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2 left"> Hero
+				Set</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
 					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
@@ -64,7 +62,7 @@
 	<section class="slider">
 		<ul class="slides">
 			<li>
-				<img src="{{ url_for('static', filename='images/adventurer_team4.jpg') }}" alt="Imposing band of heroes">
+				<img src="{{ url_for('static', filename='images/adventurer_team.jpg') }}" alt="Imposing band of heroes">
 				<div class="caption center-align">
 
 					<h2 class="caption1 grey-text text-lighten-3">Hero Set, home of roleplay characters</h2>
@@ -94,13 +92,13 @@
 		</ul>
 	</section>
 
-	<section class="linear-gradients">
+	<section class="linear-gradients jinja-section">
 		{% block content %} {% endblock %}
 	</section>
 
 	<!-- Footer -->
-	<footer class="blue-grey darken-2 grey-text text-lighten-2 center">
-		<p class="flow-text">Adventure Plan 2020</p>
+	<footer class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper">
+		<p class="flow-text">Hero Set 2020</p>
 	</footer>
 
 	<!-- jQuery CDN -->
