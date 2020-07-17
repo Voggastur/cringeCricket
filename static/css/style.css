@@ -6,35 +6,52 @@
   padding: 0;
 }
 
-.link-text,
-.brand-logo span {
-  font-size: 1.5em;
-  margin-left: 10px;
+.link-text i,
+.link-text span,
+.brand-logo {
+  font-size: 1.3em;
+}
+
+.brand-logo {
+  margin-left: 20px;
 }
 
 /* Slider Section */
 
 .caption1 {
   font-family: "Grenze Gotisch", cursive;
-  font-size: 3.1em;
+  text-transform: capitalize;
+  font-size: 3.7em;
   font-weight: 500;
   text-shadow: 3px 2px #aaa;
 }
 
 .caption2 {
   font-family: "Grenze Gotisch", cursive;
+  font-size: 2.2em;
   font-weight: 300;
   text-shadow: 1px 1px #aaa;
 }
 
 .jinja-header {
+  text-align: center;
   text-decoration: underline;
   background: none;
+  width: 100%;
   height: 100px;
 }
 
 .jinja-header h1 {
-  font-size: 3em;
+  transform: translateX(-50px);
+  font-size: 3.5em;
+}
+
+.button-wrap {
+  width: 100%;
+  padding: 10px;
+}
+
+.button-wrap button {
   display: block;
   margin: 0 auto;
 }
@@ -46,6 +63,7 @@
 }
 
 .jinja-section {
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -65,21 +83,28 @@
   border-radius: 10px;
 }
 
+.card h6 {
+  border-bottom: 2px #000;
+  border-right: 2px #000;
+}
+
 .card-items {
-  padding: 2px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  padding: 1px;
+}
+
+.card-items p i {
+  font-size: 1em;
 }
 
 .card-items p {
-  font-family: "Roboto", sans-serif;
   display: block;
-  font-weight: 300;
-  line-height: 1.5;
-  margin: 0, 2px;
-  font-size: 0, 8em;
+  line-height: 1.4;
 }
 
 .card-items p span {
-  font-weight: 500;
+  font-family: inherit;
 }
 
 /* Modal */
@@ -91,13 +116,13 @@
 /* Forms */
 
 .form {
-    padding: 10px 0px;
+  padding: 10px;
 }
 
 /* Footer */
 
 .adventure-footer {
-    padding: 10px 0px;
+  padding: 10px 0px;
 }
 
 .the-real-footer {

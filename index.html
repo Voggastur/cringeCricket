@@ -17,27 +17,27 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 	<!-- My CSS -->
 	<link rel="stylesheet" href="static/css/style.css" />
-	<title>Hero Set</title>
+	<title>HeroesDB</title>
 </head>
 
 <body>
 	<header>
 		<nav class="nav-wrapper blue-grey darken-1">
 			<a href="{{url_for('get_heroes')}}"
-				class="brand-logo grey-text text-lighten-2 left"><span> Hero Set</span></a>
+				class="grey-text text-lighten-3 left brand-logo"> HeroesDB</a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
-					<a class="grey-text text-lighten-2" href="{{url_for('get_heroes')}}">
+					<a class="grey-text text-lighten-3" href="{{url_for('get_heroes')}}">
 						<i class="fas fa-home"></i>
 						<span class="link-text">Home</span></a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-2" href="{{url_for('add_hero')}}">
+					<a class="grey-text text-lighten-3" href="{{url_for('add_hero')}}">
 						<i class="fa fa-user-plus"></i>
 						<span class="link-text">Create Hero</span></a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-2" href="{{url_for('get_adventure')}}">
+					<a class="grey-text text-lighten-3" href="{{url_for('get_adventure')}}">
 						<i class="fas fa-chess-rook"></i>
 						<span class="link-text">Adventures</span></a>
 				</li>
@@ -63,7 +63,7 @@
 				<img src="static/images/adventurer_team.jpg" alt="Hiding band of heroes in the desert">
 				<div class="caption center-align">
 
-					<h2 class="caption1 grey-text text-lighten-4">Hero Set, home of roleplay characters</h2>
+					<h2 class="caption1 grey-text text-lighten-4">Heroes, home of roleplay characters</h2>
 					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">Create your heroes ahead of
 						your
 						adventures</h5>
@@ -81,7 +81,7 @@
 			<li>
 				<img src="static/images/hero_travel.jpg" alt="Band of travellers in desert strolling away from a city">
 				<div class="caption left-align">
-					<h2 class="caption1 grey-text text-lighten-4">Safely Stored at MongoDB</h2>
+					<h2 class="caption1 grey-text text-lighten-4">Safely stored at MongoDB</h2>
 					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">Update your heroes over time, and
 						add new adventures for the future</h5>
 				</div>
@@ -90,8 +90,8 @@
 	</section>
 
 	<section class="linear-gradients jinja-section">
-		<header class="jinja-header valign-wrapper">
-			<h1>Heroes</h1>
+		<header class="jinja-header">
+			<h1>HeroesDB</h1>
 		</header>
 		<div class="row">
 			<!-- Hero Card -->
@@ -214,7 +214,7 @@
 	</section>
 	<!-- Footer -->
 	<footer class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper">
-		<p class="flow-text">Hero Set 2020</p>
+		<p class="flow-text">Heroes 2020</p>
 	</footer>
 	<!-- jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"

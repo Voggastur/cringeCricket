@@ -1,5 +1,6 @@
 {% extends 'base.html'%} {% block content %}
-<header class="jinja-header valign-wrapper">
+
+<header class="jinja-header">
 	<h1>Heroes</h1>
 </header>
 
@@ -9,20 +10,20 @@
         <!-- Hero Card -->
 		<div class="col m4 offset-m1 s10 offset-s1 card hoverable blue-grey darken-1 grey-text text-lighten-3">
 			<div class="card-items">
-				<p><i class="fas fa-pen"></i><span>Hero Name:</span> {{hero.hero_name}}</p>
-				<p><i class="fas fa-user"></i><span>Race:</span> {{hero.race}}</p>
-				<p><i class="fas fa-home"></i><span>Home:</span> {{hero.home}}</p>
-				<p>
-					<i class="fas fa-wrench"></i><span>Profession:</span> {{hero.profession}}
+				<p class="truncate"><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.hero_name}}</p>
+				<p class="truncate"><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
+				<p class="truncate"><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
+				<p class="truncate">
+					<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
 				</p>
-				<p><i class="fas fa-fist-raised"></i><span>Weapon(s):</span> {{hero.weapon}}</p>
-				<p><i class="fas fa-shield-alt"></i><span>Armor:</span> {{hero.armor}}</p>
-				<p><i class="fas fa-horse"></i><span>Mount:</span> {{hero.mount}}</p>
-				<p>
-					<i class="fas fa-shopping-bag"></i><span>Possessions:</span> {{hero.possessions}}
+				<p class="truncate"><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}</p>
+				<p class="truncate"><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
+				<p class="truncate"><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
+				<p class="truncate">
+					<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
 				</p>
-				<p>
-					<i class="fas fa-chess-rook"></i><span>Adventure:</span> {{hero.adventure_name}}
+				<p class="truncate">
+					<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
 				</p>
 			</div>
 			<!-- Hero Card Footer -->
