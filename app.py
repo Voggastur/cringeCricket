@@ -53,15 +53,15 @@ def update_hero(hero_id):
     heroes = mongo.db.heroes
     heroes.update({'_id': ObjectId(hero_id)},
                   {
-        'adventure_name': request.form.get('adventure_name'),
         'hero_name': request.form.get('hero_name'),
         'weapon': request.form.get('weapon'),
         'armor': request.form.get('armor'),
+        'race': request.form.get('race'),
         'profession': request.form.get('profession'),
         'mount': request.form.get('mount'),
-        'possessions': request.form.get('possessions'),
         'home': request.form.get('home'),
-        'race': request.form.get('race'),
+        'possessions': request.form.get('possessions'),
+        'adventure_name': request.form.get('adventure_name')
     })
     return redirect(url_for('get_heroes'))
 
