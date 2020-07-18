@@ -80,7 +80,13 @@
 
 .card {
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+.card:hover {
+  -webkit-box-shadow: 10px 10px 5px 0px #aaaaaa;
+  -moz-box-shadow: 10px 10px 5px 0px #aaaaaa;
+  box-shadow: 10px 10px 5px 0px #aaaaaa;
 }
 
 .card h6 {
