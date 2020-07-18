@@ -19,18 +19,7 @@ $(document).ready(function () {
   const mb = document.querySelectorAll(".materialboxed");
   M.Materialbox.init(mb, {});
 
-  // Auto Complete
-  const ac = document.querySelector(".autocomplete");
-  M.Autocomplete.init(ac, {
-    data: {
-      Aruba: null,
-      "Cancun Mexico": null,
-      Hawaii: null,
-      Florida: null,
-      California: null,
-      Jamaica: null,
-      Europe: null,
-      "The Bahamas": null,
-    },
-  });
+  // Carousel
+  $('.carousel').carousel();
+  
 });
