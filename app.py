@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_heroes')
 def get_heroes():
-    return render_template("heroes.html",
+    return render_template("heroes.html", jinja_header="Heroes",
                            heroes=mongo.db.heroes.find(),
                            adventures=mongo.db.adventures.find())
 
@@ -29,12 +29,15 @@ def get_heroes():
 @app.route('/add_hero')
 def add_hero():
     return render_template('add_hero.html',
+                           jinja_header="Create Hero",
                            heroes=mongo.db.heroes.find(),
                            adventures=mongo.db.adventures.find())
 
 
 @app.route('/insert_hero', methods=['POST'])
 def insert_hero():
+    if request.method == "POST":
+        flash("Hero has been inserted! Check it out in the Home tab")
     heroes = mongo.db.heroes
     heroes.insert_one(request.form.to_dict())
     return redirect(url_for('get_heroes'))
@@ -44,12 +47,16 @@ def insert_hero():
 def edit_hero(hero_id):
     the_hero = mongo.db.heroes.find_one({"_id": ObjectId(hero_id)})
     all_adventures = mongo.db.adventures.find()
-    return render_template('edit_hero.html', hero=the_hero,
+    return render_template('edit_hero.html',
+                           jinja_header="Edit Hero",
+                           hero=the_hero,
                            adventures=all_adventures)
 
 
 @app.route('/update_hero/<hero_id>', methods=["POST"])
 def update_hero(hero_id):
+    if request.method == "POST":
+        flash("Hero has been updated! Check it out in the Home tab")
     heroes = mongo.db.heroes
     heroes.update({'_id': ObjectId(hero_id)},
                   {
@@ -74,7 +81,7 @@ def delete_hero(hero_id):
 
 @app.route('/get_adventure')
 def get_adventure():
-    return render_template('adventure.html',
+    return render_template('adventure.html', jinja_header="Adventures",
                            adventures=mongo.db.adventures.find())
 
 
@@ -88,11 +95,15 @@ def delete_adventure(adventure_id):
 def edit_adventure(adventure_id):
     the_adventure = mongo.db.adventures.find_one(
         {"_id": ObjectId(adventure_id)})
-    return render_template('edit_adventure.html', adventure=the_adventure)
+    return render_template('edit_adventure.html',
+                           jinja_header="Edit Adventure",
+                           adventure=the_adventure)
 
 
 @app.route('/update_adventure/<adventure_id>', methods=['POST'])
 def update_adventure(adventure_id):
+    if request.method == "POST":
+        flash("Adventure has been updated! Check it out in the Adventure tab")
     mongo.db.adventures.update(
         {'_id': ObjectId(adventure_id)},
         {'adventure_name': request.form.get('adventure_name')},
@@ -102,6 +113,8 @@ def update_adventure(adventure_id):
 
 @app.route('/insert_adventure', methods=['POST'])
 def insert_adventure():
+    if request.method == "POST":
+        flash("Adventure has been updated! Check it out in the Adventure tab")
     adventures = mongo.db.adventures
     adventures.insert_one(request.form.to_dict())
     return redirect(url_for('get_adventure'))
@@ -110,6 +123,7 @@ def insert_adventure():
 @app.route('/add_adventure')
 def add_adventure():
     return render_template('add_adventure.html',
+                           jinja_header="Add Adventure",
                            adventures=mongo.db.adventures.find())
 
 
