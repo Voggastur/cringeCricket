@@ -1,309 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Fontawesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <!-- Google Fonts 'Grenze Gotisch', 'Special Elite', 'Roboto' -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500;600&family=Roboto:wght@300;500&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <!-- My shortcut icon -->
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="static/images/favicon.ico"
+    />
+    <!-- Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="static/css/style.css" />
+    <title>HeroesDB</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<!-- Fontawesome Icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-	<!-- Google Fonts 'Grenze Gotisch', 'Special Elite', 'Roboto' -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500;600&family=Roboto:wght@300;500&family=Special+Elite&display=swap"
-		rel="stylesheet">
-	<!-- My shortcut icon -->
-	<link rel="shortcut icon" type="image/jpg" href="static/images/favicon.ico" />
-	<!-- Materialize CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-	<!-- My CSS -->
-	<link rel="stylesheet" href="static/css/style.css" />
-	<title>HeroesDB</title>
-</head>
+  <body>
+    <header>
+      <nav class="nav-wrapper blue-grey darken-1">
+        <a
+          href="{{url_for('get_heroes')}}"
+          class="grey-text text-lighten-3 left brand-logo"
+        >
+          HeroesDB</a
+        >
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a
+              class="grey-text text-lighten-3"
+              href="{{url_for('get_heroes')}}"
+            >
+              <i class="fas fa-home"></i>
+              <span class="link-text">Home</span></a
+            >
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="{{url_for('add_hero')}}">
+              <i class="fa fa-user-plus"></i>
+              <span class="link-text">Create Hero</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="grey-text text-lighten-3"
+              href="{{url_for('get_adventure')}}"
+            >
+              <i class="fas fa-chess-rook"></i>
+              <span class="link-text">Adventures</span></a
+            >
+          </li>
+        </ul>
+        <ul class="right hide-on-large-only">
+          <li>
+            <a href="{{url_for('get_heroes')}}">
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('add_hero')}}">
+              <i class="fa fa-user-plus"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('get_adventure')}}">
+              <i class="fas fa-chess-rook"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-	<header>
-		<nav class="nav-wrapper blue-grey darken-1">
-			<a href="{{url_for('get_heroes')}}" class="grey-text text-lighten-3 left brand-logo"> HeroesDB</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li>
-					<a class="grey-text text-lighten-3" href="{{url_for('get_heroes')}}">
-						<i class="fas fa-home"></i>
-						<span class="link-text">Home</span></a>
-				</li>
-				<li>
-					<a class="grey-text text-lighten-3" href="{{url_for('add_hero')}}">
-						<i class="fa fa-user-plus"></i>
-						<span class="link-text">Create Hero</span></a>
-				</li>
-				<li>
-					<a class="grey-text text-lighten-3" href="{{url_for('get_adventure')}}">
-						<i class="fas fa-chess-rook"></i>
-						<span class="link-text">Adventures</span></a>
-				</li>
-			</ul>
-			<ul class="right hide-on-large-only">
-				<li><a href="{{url_for('get_heroes')}}">
-						<i class="fas fa-home"></i>
-					</a></li>
-				<li><a href="{{url_for('add_hero')}}">
-						<i class="fa fa-user-plus"></i>
-					</a></li>
-				<li><a href="{{url_for('get_adventure')}}">
-						<i class="fas fa-chess-rook"></i>
-					</a></li>
-			</ul>
-		</nav>
-	</header>
+    <!-- Section: Slider -->
+    <section class="slider">
+      <ul class="slides">
+        <li>
+          <img
+            src="static/images/adventurer_team.jpg"
+            alt="Hiding band of heroes in the desert"
+          />
+          <div class="caption center-align">
+            <h2 class="caption1 grey-text text-lighten-4">
+              Heroes, home of roleplay characters
+            </h2>
+            <h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">
+              Create your heroes ahead of your adventures
+            </h5>
+          </div>
+        </li>
+        <li>
+          <img
+            src="static/images/tavern.jpg"
+            alt="People talking around table in a medieval tavern"
+          />
+          <div class="caption right-align">
+            <h2 class="caption1 grey-text text-lighten-4">
+              Ever forgot arrows for your longbow?
+            </h2>
+            <h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">
+              The game-master can be a nuisance, plan ahead and discuss with
+              your team
+            </h5>
+          </div>
+        </li>
+        <li>
+          <img
+            src="static/images/hero_travel.jpg"
+            alt="Band of travellers in desert strolling away from a city"
+          />
+          <div class="caption left-align">
+            <h2 class="caption1 grey-text text-lighten-4">
+              Safely stored at MongoDB
+            </h2>
+            <h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">
+              Update your heroes over time, and add new adventures for the
+              future
+            </h5>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-	<!-- Section: Slider -->
-	<section class="slider">
-		<ul class="slides">
-			<li>
-				<img src="static/images/adventurer_team.jpg" alt="Hiding band of heroes in the desert">
-				<div class="caption center-align">
-
-					<h2 class="caption1 grey-text text-lighten-4">Heroes, home of roleplay characters</h2>
-					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">Create your heroes ahead of
-						your
-						adventures</h5>
-				</div>
-			</li>
-			<li>
-				<img src="static/images/tavern.jpg" alt="People talking around table in a medieval tavern">
-				<div class="caption right-align">
-					<h2 class="caption1 grey-text text-lighten-4">Ever forgot arrows for your longbow?
-					</h2>
-					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">The game-master can be a nuisance,
-						plan ahead and discuss with your team</h5>
-				</div>
-			</li>
-			<li>
-				<img src="static/images/hero_travel.jpg" alt="Band of travellers in desert strolling away from a city">
-				<div class="caption left-align">
-					<h2 class="caption1 grey-text text-lighten-4">Safely stored at MongoDB</h2>
-					<h5 class="caption2 grey-text text-lighten-4 hide-on-small-only">Update your heroes over time, and
-						add new adventures for the future</h5>
-				</div>
-			</li>
-		</ul>
-	</section>
-
-	<section class="linear-gradients jinja-section">
-		<header class="jinja-header">
-			<h1>HeroesDB</h1>
-		</header>
-		<div class="row">
-			<!-- Hero Card -->
-			<div
-				class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3">
-				<div class="card-items">
-					<div class="row">
-						<div class="col s6">
-							<img class="center" src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol"/>
-                        </div>
-                        <div class="col s6">
-						<h6><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</h6>
-						<p class="visibility"><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
-						<p class="visibility"><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
-						<h6>
-							<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
-						</h6>
-						<p class="visibility"><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-						</p>
-						<p class="visibility"><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
-						<p class="visibility"><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
-						<p class="visibility">
-							<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-						</p>
-						<p class="visibility">
-							<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
-						</p>
-					</div>
-                    </div>
-					</div>
-					<!-- Hero Card Footer -->
-					<div class="card-action center-align">
-						<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-							Edit
-						</a>
-						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-							Delete</a>
-					</div>
-				</div>
-				<!-- End of Card Structure -->
-				<!-- Hero Card -->
-				<div
-					class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3">
-					<div class="card-items">
-						<img class="center" src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol"/>
-						<h6><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</h6>
-						<p class="visibility"><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
-						<p class="visibility"><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
-						<h6>
-							<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
-						</h6>
-						<p class="visibility"><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-						</p>
-						<p class="visibility"><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
-						<p class="visibility"><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
-						<p class="visibility">
-							<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-						</p>
-						<p class="visibility">
-							<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
-						</p>
-					</div>
-					<!-- Hero Card Footer -->
-					<div class="card-action center-align">
-						<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-							Edit
-						</a>
-						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-							Delete</a>
-					</div>
-				</div>
-				<!-- End of Card Structure -->
-				<!-- Hero Card -->
-				<div
-					class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3">
-					<div class="card-items">
-						<img class="center" src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol"/>
-						<h6><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</h6>
-						<p class="visibility"><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
-						<p class="visibility"><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
-						<h6>
-							<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
-						</h6>
-						<p class="visibility"><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-						</p>
-						<p class="visibility"><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
-						<p class="visibility"><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
-						<p class="visibility">
-							<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-						</p>
-						<p class="visibility">
-							<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
-						</p>
-					</div>
-					<!-- Hero Card Footer -->
-					<div class="card-action center-align">
-						<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-							Edit
-						</a>
-						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-							Delete</a>
-					</div>
-				</div>
-				<!-- End of Card Structure -->
-				<!-- Hero Card -->
-				<div
-					class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3">
-					<div class="card-items">
-						<img class="center" src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol"/>
-						<h6><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</h6>
-						<p class="visibility"><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
-						<p class="visibility"><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
-						<h6>
-							<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
-						</h6>
-						<p class="visibility"><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-						</p>
-						<p class="visibility"><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
-						<p class="visibility"><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
-						<p class="visibility">
-							<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-						</p>
-						<p class="visibility">
-							<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
-						</p>
-					</div>
-					<!-- Hero Card Footer -->
-					<div class="card-action center-align">
-						<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-							Edit
-						</a>
-						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-							Delete</a>
-					</div>
-				</div>
-				<!-- End of Card Structure -->
-				<!-- Hero Card -->
-				<div
-					class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3">
-					<div class="card-items">
-						<img class="center" src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol"/>
-						<h6><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</h6>
-						<p class="visibility"><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
-						<p class="visibility"><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
-						<h6>
-							<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
-						</h6>
-						<p class="visibility"><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-						</p>
-						<p class="visibility"><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
-						<p class="visibility"><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
-						<p class="visibility">
-							<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-						</p>
-						<p class="visibility">
-							<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
-						</p>
-					</div>
-					<!-- Hero Card Footer -->
-					<div class="card-action center-align">
-						<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-							Edit
-						</a>
-						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-							Delete</a>
-					</div>
-				</div>
-				<!-- End of Card Structure -->
-				<!-- Hero Card -->
-				<div
-					class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3">
-					<div class="card-items">
-						<img class="center" src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol"/>
-						<h6><i class="fas fa-pen"></i><span> Hero Name:</span> {{hero.name}}</h6>
-						<p class="visibility"><i class="fas fa-user"></i><span> Race:</span> {{hero.race}}</p>
-						<p class="visibility"><i class="fas fa-home"></i><span> Home:</span> {{hero.home}}</p>
-						<h6>
-							<i class="fas fa-wrench"></i><span> Profession:</span> {{hero.profession}}
-						</h6>
-						<p class="visibility"><i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-						</p>
-						<p class="visibility"><i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}</p>
-						<p class="visibility"><i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}</p>
-						<p class="visibility">
-							<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-						</p>
-						<p class="visibility">
-							<i class="fas fa-chess-rook"></i><span> Adventure:</span> {{hero.adventure_name}}
-						</p>
-					</div>
-					<!-- Hero Card Footer -->
-					<div class="card-action center-align">
-						<a href="#editing" class="waves-effect btn green modal-trigger"><i class="fas fa-user-edit"></i>
-							Edit
-						</a>
-						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-							Delete</a>
-					</div>
-				</div>
-				<!-- End of Card Structure -->
-			</div>
-	</section>
-	<!-- Footer -->
-	<footer class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper">
-		<p class="flow-text">Heroes 2020</p>
-	</footer>
-	<!-- jQuery CDN -->
-	<script src="https://code.jquery.com/jquery-3.5.0.min.js"
-		integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-	<!-- My Javascript -->
-	<script type="text/javascript" src="static/js/script.js"></script>
-	<!-- Materialize JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
-
+    <section class="linear-gradients jinja-section">
+      <header class="jinja-header">
+        <h1>Heroes</h1>
+      </header>
+      <div class="row">
+        <!-- Hero Card -->
+        <div
+          class="col m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3"
+        >
+          <div class="card-items">
+            <div class="row">
+              <div class="col s4">
+                <img
+                  src="static/images/spartan.jpg"
+                  alt="Spartan helmet - Generic Hero Symbol"
+                />
+              </div>
+              <div class="col s8">
+                <p class="left">
+                  <i class="fas fa-pen"></i
+                  ><span class="visibility target"> Hero Name:</span>
+                  {{hero.name}}
+                </p>
+                <p class="visibility target left">
+                  <i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
+                </p>
+                <p class="visibility target left">
+                  <i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+                </p>
+                <p class="left">
+                  <i class="fas fa-wrench"></i
+                  ><span class="visibility target"> Profession:</span>
+                  {{hero.profession}}
+                </p>
+                <p class="visibility target left">
+                  <i class="fas fa-fist-raised"></i
+                  ><span> Weapon(s):</span> {{hero.weapon}}
+                </p>
+                <p class="visibility target left">
+                  <i class="fas fa-shield-alt"></i
+                  ><span> Armor:</span> {{hero.armor}}
+                </p>
+                <p class="visibility target left">
+                  <i class="fas fa-horse"></i
+                  ><span> Mount:</span> {{hero.mount}}
+                </p>
+                <p class="visibility target left">
+                  <i class="fas fa-shopping-bag"></i
+                  ><span> Possessions:</span> {{hero.possessions}}
+                </p>
+                <p class="left">
+                  <i class="fas fa-chess-rook"></i
+                  ><span class="visibility target"> Adventure:</span>
+                  {{hero.adventure_name}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Card Footer -->
+          <div class="card-action center-align">
+            <a href="#editing" class="waves-effect btn green modal-trigger"
+              ><i class="fas fa-user-edit"></i>
+              Edit
+            </a>
+            <a href="#deletion" class="waves-effect btn red modal-trigger"
+              ><i class="fas fa-user-minus"></i> Delete</a
+            >
+          </div>
+        </div>
+        <!-- End of Card Structure -->
+        <!-- Hero Card -->
+        <div
+          class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3"
+        >
+          <div class="card-items">
+            <div class="row">
+              <div class="col s4">
+                <img
+                  src="static/images/spartan.jpg"
+                  alt="Spartan helmet - Generic Hero Symbol"
+                />
+              </div>
+              <div class="col s8 left-align">
+                <p>
+                  <i class="fas fa-pen"></i
+                  ><span class="visibility target"> Hero Name:</span>
+                  {{hero.name}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+                </p>
+                <p>
+                  <i class="fas fa-wrench"></i
+                  ><span class="visibility target"> Profession:</span>
+                  {{hero.profession}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-fist-raised"></i
+                  ><span> Weapon(s):</span> {{hero.weapon}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shield-alt"></i
+                  ><span> Armor:</span> {{hero.armor}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-horse"></i
+                  ><span> Mount:</span> {{hero.mount}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shopping-bag"></i
+                  ><span> Possessions:</span> {{hero.possessions}}
+                </p>
+                <p>
+                  <i class="fas fa-chess-rook"></i
+                  ><span class="visibility target"> Adventure:</span>
+                  {{hero.adventure_name}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Card Footer -->
+          <div class="card-action center-align">
+            <a href="#editing" class="waves-effect btn green modal-trigger"
+              ><i class="fas fa-user-edit"></i>
+              Edit
+            </a>
+            <a href="#deletion" class="waves-effect btn red modal-trigger"
+              ><i class="fas fa-user-minus"></i> Delete</a
+            >
+          </div>
+        </div>
+        <!-- End of Card Structure -->
+        <!-- Hero Card -->
+        <div
+          class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3"
+        >
+          <div class="card-items">
+            <div class="row">
+              <div class="col s4">
+                <img
+                  src="static/images/spartan.jpg"
+                  alt="Spartan helmet - Generic Hero Symbol"
+                />
+              </div>
+              <div class="col s8 left-align">
+                <p>
+                  <i class="fas fa-pen"></i
+                  ><span class="visibility target"> Hero Name:</span>
+                  {{hero.name}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+                </p>
+                <p>
+                  <i class="fas fa-wrench"></i
+                  ><span class="visibility target"> Profession:</span>
+                  {{hero.profession}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-fist-raised"></i
+                  ><span> Weapon(s):</span> {{hero.weapon}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shield-alt"></i
+                  ><span> Armor:</span> {{hero.armor}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-horse"></i
+                  ><span> Mount:</span> {{hero.mount}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shopping-bag"></i
+                  ><span> Possessions:</span> {{hero.possessions}}
+                </p>
+                <p>
+                  <i class="fas fa-chess-rook"></i
+                  ><span class="visibility target"> Adventure:</span>
+                  {{hero.adventure_name}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Card Footer -->
+          <div class="card-action center-align">
+            <a href="#editing" class="waves-effect btn green modal-trigger"
+              ><i class="fas fa-user-edit"></i>
+              Edit
+            </a>
+            <a href="#deletion" class="waves-effect btn red modal-trigger"
+              ><i class="fas fa-user-minus"></i> Delete</a
+            >
+          </div>
+        </div>
+        <!-- End of Card Structure -->
+        <!-- Hero Card -->
+        <div
+          class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3"
+        >
+          <div class="card-items">
+            <div class="row">
+              <div class="col s4">
+                <img
+                  src="static/images/spartan.jpg"
+                  alt="Spartan helmet - Generic Hero Symbol"
+                />
+              </div>
+              <div class="col s8 left-align">
+                <p>
+                  <i class="fas fa-pen"></i
+                  ><span class="visibility target"> Hero Name:</span>
+                  {{hero.name}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+                </p>
+                <p>
+                  <i class="fas fa-wrench"></i
+                  ><span class="visibility target"> Profession:</span>
+                  {{hero.profession}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-fist-raised"></i
+                  ><span> Weapon(s):</span> {{hero.weapon}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shield-alt"></i
+                  ><span> Armor:</span> {{hero.armor}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-horse"></i
+                  ><span> Mount:</span> {{hero.mount}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shopping-bag"></i
+                  ><span> Possessions:</span> {{hero.possessions}}
+                </p>
+                <p>
+                  <i class="fas fa-chess-rook"></i
+                  ><span class="visibility target"> Adventure:</span>
+                  {{hero.adventure_name}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Card Footer -->
+          <div class="card-action center-align">
+            <a href="#editing" class="waves-effect btn green modal-trigger"
+              ><i class="fas fa-user-edit"></i>
+              Edit
+            </a>
+            <a href="#deletion" class="waves-effect btn red modal-trigger"
+              ><i class="fas fa-user-minus"></i> Delete</a
+            >
+          </div>
+        </div>
+        <!-- End of Card Structure -->
+        <!-- Hero Card -->
+        <div
+          class="col l2 offset-l1 m4 offset-m1 s8 offset-s2 card materialboxed blue-grey darken-1 grey-text text-lighten-3"
+        >
+          <div class="card-items">
+            <div class="row">
+              <div class="col s4">
+                <img
+                  src="static/images/spartan.jpg"
+                  alt="Spartan helmet - Generic Hero Symbol"
+                />
+              </div>
+              <div class="col s8 left-align">
+                <p>
+                  <i class="fas fa-pen"></i
+                  ><span class="visibility target"> Hero Name:</span>
+                  {{hero.name}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+                </p>
+                <p>
+                  <i class="fas fa-wrench"></i
+                  ><span class="visibility target"> Profession:</span>
+                  {{hero.profession}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-fist-raised"></i
+                  ><span> Weapon(s):</span> {{hero.weapon}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shield-alt"></i
+                  ><span> Armor:</span> {{hero.armor}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-horse"></i
+                  ><span> Mount:</span> {{hero.mount}}
+                </p>
+                <p class="visibility target">
+                  <i class="fas fa-shopping-bag"></i
+                  ><span> Possessions:</span> {{hero.possessions}}
+                </p>
+                <p>
+                  <i class="fas fa-chess-rook"></i
+                  ><span class="visibility target"> Adventure:</span>
+                  {{hero.adventure_name}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Card Footer -->
+          <div class="card-action center-align">
+            <a href="#editing" class="waves-effect btn green modal-trigger"
+              ><i class="fas fa-user-edit"></i>
+              Edit
+            </a>
+            <a href="#deletion" class="waves-effect btn red modal-trigger"
+              ><i class="fas fa-user-minus"></i> Delete</a
+            >
+          </div>
+        </div>
+        <!-- End of Card Structure -->
+      </div>
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <input
+            name="test-input"
+            type="text"
+            class="test-input"
+            data-length="80"
+          />
+          <label for="test-input">Test Input Here</label>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper"
+    >
+      <p class="flow-text">Heroes 2020</p>
+    </footer>
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <!-- My Javascript -->
+    <script type="text/javascript" src="static/js/script.js"></script>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
 </html>
