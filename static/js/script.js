@@ -3,11 +3,12 @@ $(document).ready(function () {
   $(".modal").modal();
   $("select#adventure").formSelect();
   $("#possessions").characterCounter();
-  $(".materialboxed").materialbox(function {
-    $(".card").onOpenStart(function() {
-        $(this).find("p").css("transition", "all 0.5s ease").css("display", "block").css("visibility", "visible");
-        });
-    });
+  $('.materialboxed').materialbox({
+    inDuration:200,
+    outDuration:200,
+    onOpenEnd: function() {$(this).children("p", "span").removeClass(".visibility")},
+    onCloseEnd: function() {$(this).children("p", "span").addClass(".visibility")}
+});
   
   // My functions
   const slider = document.querySelector(".slider");
@@ -22,4 +23,5 @@ $(document).ready(function () {
   //    $(this).wrap( "<div class='hero_wrap'></div>" );
   //    $(".hero_wrap").css("transition", "all 0.5s ease").css("position", "absolute").css("width", "100vw").css("height", "100vh").css("background-color", "#000");
 
+  // onOpenEnd: function() {$(".card-items p", ".card-items span").removeClass("visibility").css("color", "#fff").css("position", "relative")},
 });

@@ -79,14 +79,17 @@
 /* Hero Cards */
 
 .card {
+  position: relative;
+  justify-content: center;
   margin: 5px;
   border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
--webkit-box-shadow: 9px 9px 5px 11px rgba(85,85,85,1);
--moz-box-shadow: 9px 9px 5px 11px rgba(85,85,85,1);
-box-shadow: 9px 9px 5px 11px rgba(85,85,85,1);
+  -webkit-box-shadow: 9px 9px 5px 11px rgba(85, 85, 85, 1);
+  -moz-box-shadow: 9px 9px 5px 11px rgba(85, 85, 85, 1);
+  box-shadow: 9px 9px 5px 11px rgba(85, 85, 85, 1);
 }
 
 .card-items {
@@ -96,28 +99,28 @@ box-shadow: 9px 9px 5px 11px rgba(85,85,85,1);
 }
 
 .card-items img {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 30vh;
+  position: relative;
+  width: 4vw;
+  height: 8vh;
 }
 
 .card-items p i {
   font-size: 1em;
 }
 
-.card-items p {
-  display: none;
-  visibility: none;
-  line-height: 1.4;
+.visibility {
+  visibility: hidden;
 }
 
-
+.card-items p {
+  line-height: 1.4;
+}
 
 .card-items p span {
   font-family: inherit;
 }
+
+/* jQuery .addClass on materialboxes */
 
 /* Modal */
 
