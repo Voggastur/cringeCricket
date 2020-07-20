@@ -10,7 +10,7 @@ if path.exists("env.py"):
 app = Flask(__name__)
 
 
-# My DB on MongoDB
+# My environment variables
 app.config["MONGO_DBNAME"] = 'adventurers'
 # SECRET_KEY variable
 app.config["MONGO_URI"] = os.environ.get('SECRET_KEY')
@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_heroes')
 def get_heroes():
-    return render_template("heroes.html", jinja_header="Heroes",
+    return render_template("heroes.html", view_header="Heroes",
                            heroes=mongo.db.heroes.find(),
                            adventures=mongo.db.adventures.find())
 
@@ -29,7 +29,7 @@ def get_heroes():
 @app.route('/add_hero')
 def add_hero():
     return render_template('add_hero.html',
-                           jinja_header="Create Hero",
+                           view_header="Create Hero",
                            heroes=mongo.db.heroes.find(),
                            adventures=mongo.db.adventures.find())
 
@@ -48,7 +48,7 @@ def edit_hero(hero_id):
     the_hero = mongo.db.heroes.find_one({"_id": ObjectId(hero_id)})
     all_adventures = mongo.db.adventures.find()
     return render_template('edit_hero.html',
-                           jinja_header="Edit Hero",
+                           view_header="Edit Hero",
                            hero=the_hero,
                            adventures=all_adventures)
 
@@ -81,7 +81,7 @@ def delete_hero(hero_id):
 
 @app.route('/get_adventure')
 def get_adventure():
-    return render_template('adventure.html', jinja_header="Adventures",
+    return render_template('adventure.html', view_header="Adventures",
                            adventures=mongo.db.adventures.find())
 
 
@@ -96,7 +96,7 @@ def edit_adventure(adventure_id):
     the_adventure = mongo.db.adventures.find_one(
         {"_id": ObjectId(adventure_id)})
     return render_template('edit_adventure.html',
-                           jinja_header="Edit Adventure",
+                           view_header="Edit Adventure",
                            adventure=the_adventure)
 
 
@@ -123,8 +123,15 @@ def insert_adventure():
 @app.route('/add_adventure')
 def add_adventure():
     return render_template('add_adventure.html',
-                           jinja_header="Add Adventure",
+                           view_header="Add Adventure",
                            adventures=mongo.db.adventures.find())
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """Route for handling 404 errors"""
+    return render_template('404.html',
+                           view_header="Page does not exist!"), 404
 
 
 if __name__ == '__main__':

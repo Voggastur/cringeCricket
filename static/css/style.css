@@ -69,35 +69,45 @@
 /* Hero Cards */
 
 .card {
-  position: relative;
-  margin: 5px;
+  margin: 20px;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(187, 187, 187, 1);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(187, 187, 187, 1);
-  box-shadow: 10px 10px 5px 0px rgba(187, 187, 187, 1);
+  -webkit-box-shadow: 8px 8px 30px 4px rgba(85,85,85,1);
+  -moz-box-shadow: 8px 8px 30px 4px rgba(85,85,85,1);
+  box-shadow: 8px 8px 30px 4px rgba(85,85,85,1);
 }
 
 .card-items {
+  text-align: left;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   padding: 1px;
+  padding-top: 15px;
+}
+
+.card-items:hover {
+    cursor:pointer;
 }
 
 .card-items img {
   position: static;
   width: 100%;
-  max-width: 150px;
+  max-width: 120px;
+  height: fill;
 }
 
 .card-items h6,
-.card-items p,
+.card-items p {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
 .card-items p i {
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .visibility {
@@ -117,34 +127,16 @@
   margin: 0 auto;
 }
 
-/* jQuery .addClass on materialboxes */
+/* jQuery .addClass on card click */
 
-.enlarge {
-  line-height: 1.5;
-  font-weight: normal;
-  font-size: 14px;
-  font-family: "Special Elite", cursive;
-  display: block;
-  margin: 5px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background-color: #546e7a !important;
-  color: #eee !important;
-  float: left;
-  box-sizing: border-box;
-  padding: 0 0.75rem;
-  min-height: 1px;
-  cursor: zoom-out;
-  box-shadow: 8px 8px 5px 4px #bbbbbb;
-  right: auto;
-  margin-left: 8.3333333333%;
-  position: absolute;
-  z-index: 1000;
-  will-change: left, top, width, height;
-  height: 845.528px;
-  width: 910.8px;
-  left: -6.99375px;
-  top: -134.951px;
+.wrapper {
+    position: relative;
+    width: 100vw;
+}
+
+.transform-text {
+    font-size: 1em;
+    line-height: 1.2;
 }
 
 /* Modal */
