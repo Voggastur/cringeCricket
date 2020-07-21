@@ -7,11 +7,11 @@ $(document).ready(function () {
   $(".collapsible").collapsible({
       onOpenStart() {
           $(this).find(".target").removeClass("visibility"); // This makes my less important paragraphs visible on clicking card
-          $(this).find("p", "h6", "i").addClass("transform_text"); // This class improves the readability of the text
+          $(this).find("p, h4, i").addClass("transform_text"); // This class improves the readability of the text
       },
       onCloseStart() {
           $(this).find(".target").addClass("visibility"); // This makes my chosen paragraphs invisible again
-          $(this).find("p", "h6", "i").removeClass("transform_text"); // Revert to normal text
+          $(this).find("p, h4, i").removeClass("transform_text"); // Revert to normal text
       }
   });
   

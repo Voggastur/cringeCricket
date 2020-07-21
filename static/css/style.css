@@ -78,22 +78,18 @@
   box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
 }
 
-.card-items {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-}
-
-.card-items:hover {
+.hero-card ul {
   cursor: pointer;
 }
 
-.helmet {
-  margin: 0;
+.header-content .helmet {
+  float: left;
+  height: 100%;
+  width: 18%;
+  top: 0;
+  left: 0;
+  bottom: 0;
   padding: 0;
-  display: block;
-  position: static;
-  max-width: 75px;
-  max-height: 75px;
 }
 
 .collapsible {
@@ -106,6 +102,11 @@
 
 .collapsible-header,
 .collapsible-body {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
   position: relative;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
@@ -113,19 +114,34 @@
   box-shadow: 0px 0px 0px 0px #000;
 }
 
+.header-content {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .card-text {
-  margin-left: 6px;
-  display: block;
+  font-family: "Special Elite", cursive;
+  font-weight: 300;
+  width: 75%;
+  margin: 6px;
+  margin-right: 0;
+  padding: 0;
   text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.header-content h4 {
   font-size: 18px;
-  line-height: 1.6;
+  float: right;
 }
 
 .card-action {
   padding-bottom: 5px;
 }
 
-.visibility {
+.invisibility {
   visibility: hidden;
   position: absolute;
 }

@@ -120,7 +120,7 @@ def add_adventure():
                            adventures=mongo.db.adventures.find())
 
 
-@app.route('/error404') # route for handling 404 error
+@app.route('/error404')  # route for handling 404 error
 def error404():
     return render_template('404.html',
                            view_header="Page does not exist!")
