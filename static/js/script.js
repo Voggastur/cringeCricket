@@ -3,18 +3,19 @@ $(document).ready(function () {
   $("select#adventure").formSelect();
   $("textarea").characterCounter();
   $(".modal").modal();
+  // Materialize collapsible with options
   $(".collapsible").collapsible({
       onOpenStart() {
           $(this).find(".target").removeClass("visibility"); // This makes my less important paragraphs visible on clicking card
-          $(this).find("p", "h6", "i").addClass("transform-text"); // This class improves the readability of the text
+          $(this).find("p", "h6", "i").addClass("transform_text"); // This class improves the readability of the text
       },
       onCloseStart() {
           $(this).find(".target").addClass("visibility"); // This makes my chosen paragraphs invisible again
-          $(this).find("p", "h6", "i").removeClass("transform-text"); // Revert to normal text
+          $(this).find("p", "h6", "i").removeClass("transform_text"); // Revert to normal text
       }
   });
   
-  // Material slider function
+  // Materialize slider function
   let slider = document.querySelector(".slider");
   M.Slider.init(slider, {
     indicators: false,

@@ -144,10 +144,9 @@
 
 /* jQuery .addClass on card click */
 
-.transform-text {
+.transform_text {
   font-size: 0.8em;
   line-height: 1.1;
-  color: red;
 }
 
 /* Modal */
