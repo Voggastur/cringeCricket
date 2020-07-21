@@ -112,207 +112,74 @@
 		</ul>
 	</section>
 
-	<section class="linear-gradients jinja-section">
-		<header class="jinja-header">
-			<h1>Heroes</h1>
-		</header>
-		<div class="row">
-			<!-- Hero Card -->
-			<div class="col l3 push-l1 pull-l1 m4 offset-m1 s8 offset-s2 card blue-grey grey-text text-lighten-3">
-				<div class="card-items">
-					<div class="row">
-						<div class="col s2 left-align">
-							<img src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol" /></img>
-						</div>
-						<div class="col s10 left-align">
-							<p class="truncate">
-								<i class="fas fa-pen visibility target"></i><span class="visibility target"> Hero Name:</span>
-								{{hero.hero_name}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-							</p>
-							<p class="truncate">
-								<i class="fas fa-wrench visibility target"></i><span class="visibility target"> Profession:</span>
-								{{hero.profession}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-							</p>
-							<p class="truncate">
-								<i class="fas fa-chess-rook visibility target"></i><span class="visibility target"> Adventure:</span>
-								{{hero.adventure_name}}
-							</p>
-						</div>
-					</div>
-				</div>
-				<!-- Hero Card Footer -->
-				<div class="card-action center-align center">
-					<a href="#editing"
-						class="waves-effect btn green"><i class="fas fa-user-edit"></i> Edit
-					</a>
-					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-						Delete</a>
-					<!-- Delete Modal Structure -->
-					<div id="deletion" class="modal blue-grey darken-2 grey-text text-lighten-3">
-						<div class="modal-content center">
-							<h4>Deletion</h4>
-							<p>Are you sure you want to delete {{hero.hero_name}}?</p>
-						</div>
-						<div class="modal-footer blue-grey darken-2 grey-text text-lighten-3">
-							<a href="#" class="modal-close waves-effect btn blue"><i class="fas fa-undo"></i>
-								Return</a>
-							<a href="{{url_for('delete_hero', hero_id=hero._id)}}"
-								class="modal-close waves-effect btn red"><i class="fas fa-user-minus"></i>
-								Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Hero Card -->
-            <!-- Hero Card -->
-			<div class="col l3 push-l1 pull-l1 m4 offset-m1 s8 offset-s2 card blue-grey grey-text text-lighten-3">
-				<div class="card-items">
-					<div class="row">
-						<div class="col s2 left-align">
-							<img src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol" /></img>
-						</div>
-						<div class="col s10 left-align">
-							<p class="truncate">
-								<i class="fas fa-pen visibility target"></i><span class="visibility target"> Hero Name:</span>
-								{{hero.hero_name}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-							</p>
-							<p class="truncate">
-								<i class="fas fa-wrench visibility target"></i><span class="visibility target"> Profession:</span>
-								{{hero.profession}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-							</p>
-							<p class="truncate">
-								<i class="fas fa-chess-rook visibility target"></i><span class="visibility target"> Adventure:</span>
-								{{hero.adventure_name}}
-							</p>
-						</div>
-					</div>
-				</div>
-				<!-- Hero Card Footer -->
-				<div class="card-action center-align center">
-					<a href="#editing"
-						class="waves-effect btn green"><i class="fas fa-user-edit"></i> Edit
-					</a>
-					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-						Delete</a>
-					<!-- Delete Modal Structure -->
-					<div id="deletion" class="modal blue-grey darken-2 grey-text text-lighten-3">
-						<div class="modal-content center">
-							<h4>Deletion</h4>
-							<p>Are you sure you want to delete {{hero.hero_name}}?</p>
-						</div>
-						<div class="modal-footer blue-grey darken-2 grey-text text-lighten-3">
-							<a href="#" class="modal-close waves-effect btn blue"><i class="fas fa-undo"></i>
-								Return</a>
-							<a href="{{url_for('delete_hero', hero_id=hero._id)}}"
-								class="modal-close waves-effect btn red"><i class="fas fa-user-minus"></i>
-								Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Hero Card -->
-            <!-- Hero Card -->
-			<div class="col l3 push-l1 pull-l1 m4 offset-m1 s8 offset-s2 card blue-grey grey-text text-lighten-3">
-				<div class="card-items">
-					<div class="row">
-						<div class="col s2 left-align">
-							<img src="static/images/spartan.jpg" alt="Spartan helmet - Generic Hero Symbol" /></img>
-						</div>
-						<div class="col s10 left-align">
-							<p class="truncate">
-								<i class="fas fa-pen visibility target"></i><span class="visibility target"> Hero Name:</span>
-								{{hero.hero_name}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-							</p>
-							<p class="truncate">
-								<i class="fas fa-wrench visibility target"></i><span class="visibility target"> Profession:</span>
-								{{hero.profession}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-							</p>
-							<p class="truncate visibility target">
-								<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-							</p>
-							<p class="truncate">
-								<i class="fas fa-chess-rook visibility target"></i><span class="visibility target"> Adventure:</span>
-								{{hero.adventure_name}}
-							</p>
-						</div>
-					</div>
-				</div>
-				<!-- Hero Card Footer -->
-				<div class="card-action center-align center">
-					<a href="#editing"
-						class="waves-effect btn green"><i class="fas fa-user-edit"></i> Edit
-					</a>
-					<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
-						Delete</a>
-					<!-- Delete Modal Structure -->
-					<div id="deletion" class="modal blue-grey darken-2 grey-text text-lighten-3">
-						<div class="modal-content center">
-							<h4>Deletion</h4>
-							<p>Are you sure you want to delete {{hero.hero_name}}?</p>
-						</div>
-						<div class="modal-footer blue-grey darken-2 grey-text text-lighten-3">
-							<a href="#return" class="modal-close waves-effect btn blue"><i class="fas fa-undo"></i>
-								Return</a>
-							<a href="#delete"
-								class="modal-close waves-effect btn red"><i class="fas fa-user-minus"></i>
-								Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Hero Card -->
-		</div>
+	<section class="linear-gradients jinja-section center">
+		<h1>Heroes</h1>
+        <div class="container">
+            <div class="row">
+		    <!-- Hero Card -->
+		        <div class="col m5 s8 herocard blue-grey darken-1 grey-text text-lighten-3">
+				    <ul class="collapsible card-items">
+				        <li class="left-align">
+					        <div class="collapsible-header blue-grey darken-1 grey-text text-lighten-3">
+						        <img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="helmet responsive-img"/></img>
+						        <div class="header-content">
+                                    <h4 class="truncate card-text">
+						        	<i class="fas fa-pen target visibility"></i><span class="target visibility"> Hero Name:</span>
+						        	{{hero.hero_name}}
+						            </h4>
+						            <h4 class="truncate card-text">
+						        	<i class="fas fa-wrench target visibility"></i><span class="target visibility"> Profession:</span>
+						        	{{hero.profession}}
+						            </h4>
+                                </div>
+					        </div>
+						    <div class="collapsible-body blue-grey darken-1">
+							    <p class="truncate target card-text">
+							    	<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
+							    </p>
+							    <p class="truncate target card-text">
+						        	<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+						        </p>
+						        <p class="truncate target card-text">
+						        	<i class="fas fa-user"></i><span> Race:</span> {{hero.race}}
+						        </p>
+						        <p class="truncate target card-text">
+						        	<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+						        </p>
+						        <p class="truncate target card-text">
+						        	<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
+						        </p>
+						        <p class="truncate target card-text">
+						        	<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
+						        </p>
+						        <p class="truncate card-text">
+						        	<i class="fas fa-chess-rook"></i><span> Adventure:</span>
+						        	{{hero.adventure_name}}
+						        </p>
+						    </div>
+					    </li>
+				    </ul>
+				    <!-- Hero Card Footer -->
+				    <div class="card-action center-align">
+					    <a href="#editing" class="waves-effect btn green"><i class="fas fa-user-edit"></i> Edit
+					    </a>
+					    <a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i> Delete</a>
+					    <!-- Modal Delete Structure -->
+					    <div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-3">
+						    <div class="modal-content center">
+						    	<h4>Deletion</h4>
+						    	<p>Are you sure you want to delete {{hero.hero_name}}?</p>
+						    </div>
+						    <div class="modal-footer blue-grey darken-2 grey-text text-lighten-3">
+						    	<a href="#" class="modal-close waves-effect btn blue"><i class="fas fa-undo"></i> Return</a>
+						    	<a href="{{url_for('delete_hero', hero_id=hero._id)}}"
+						    		class="modal-close waves-effect btn red"><i class="fas fa-user-minus"></i> Delete</a>
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+			    <!-- End Hero Card -->
+            </div>
 		<div class="row">
 			<div class="col s6 offset-s3">
 				<input
@@ -324,6 +191,7 @@
 				<label for="test-input">Test Input Here</label>
 			</div>
 		</div>
+    </div>
 	</section>
 	<!-- Footer -->
 	<footer class="the-real-footer blue-grey darken-2 grey-text text-lighten-2 valign-wrapper">

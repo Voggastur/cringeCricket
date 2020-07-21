@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -8,7 +8,6 @@ if path.exists("env.py"):
 
 
 app = Flask(__name__)
-
 
 # My environment variables
 app.config["MONGO_DBNAME"] = 'adventurers'
@@ -36,8 +35,6 @@ def add_hero():
 
 @app.route('/insert_hero', methods=['POST'])
 def insert_hero():
-    if request.method == "POST":
-        flash("Hero has been inserted! Check it out in the Home tab")
     heroes = mongo.db.heroes
     heroes.insert_one(request.form.to_dict())
     return redirect(url_for('get_heroes'))
@@ -55,8 +52,6 @@ def edit_hero(hero_id):
 
 @app.route('/update_hero/<hero_id>', methods=["POST"])
 def update_hero(hero_id):
-    if request.method == "POST":
-        flash("Hero has been updated! Check it out in the Home tab")
     heroes = mongo.db.heroes
     heroes.update({'_id': ObjectId(hero_id)},
                   {
@@ -102,19 +97,17 @@ def edit_adventure(adventure_id):
 
 @app.route('/update_adventure/<adventure_id>', methods=['POST'])
 def update_adventure(adventure_id):
-    if request.method == "POST":
-        flash("Adventure has been updated! Check it out in the Adventure tab")
-    mongo.db.adventures.update(
-        {'_id': ObjectId(adventure_id)},
-        {'adventure_name': request.form.get('adventure_name')},
-        {'adventure_topic': request.form.get('adventure_topic')})
+    adventures = mongo.db.adventures
+    adventures.update({'_id': ObjectId(adventure_id)},
+    {
+        'adventure_name': request.form.get('adventure_name'),
+        'adventure_topic': request.form.get('adventure_topic')
+    })
     return redirect(url_for('get_adventure'))
 
 
 @app.route('/insert_adventure', methods=['POST'])
 def insert_adventure():
-    if request.method == "POST":
-        flash("Adventure has been updated! Check it out in the Adventure tab")
     adventures = mongo.db.adventures
     adventures.insert_one(request.form.to_dict())
     return redirect(url_for('get_adventure'))
@@ -127,11 +120,10 @@ def add_adventure():
                            adventures=mongo.db.adventures.find())
 
 
-@app.errorhandler(404)
-def page_not_found(e):
-    """Route for handling 404 errors"""
+@app.route('/error404') # route for handling 404 error
+def error404():
     return render_template('404.html',
-                           view_header="Page does not exist!"), 404
+                           view_header="Page does not exist!")
 
 
 if __name__ == '__main__':
