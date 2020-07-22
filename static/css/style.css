@@ -107,11 +107,7 @@
 .collapsible-body {
   /* Border styles are negating Materialize css */
   width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 0;
-  padding-right: 0;
-  position: relative;
+  padding: 5px, 0px;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
   -moz-box-shadow: 0px 0px 0px 0px #000;
@@ -125,14 +121,13 @@
 }
 
 .header-content h4 {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 300;
   text-overflow: ellipsis;
   float: left;
   width: 75%;
-  line-height: 2;
+  line-height: 1.5;
   margin: 0px;
-  margin-top: 5px;
   margin-right: 10px;
   padding: 0;
 }
@@ -145,12 +140,12 @@
 }
 
 .card-text {
-  float: left;
-  font-size: 0.9em;
+  font-size: 1em;
+  line-height: 1.5;
   width: 70%;
   text-overflow: ellipsis;
-  margin: 6px;
-  margin-right: 0;
+  margin: 0;
+  margin-right: 10px;
   padding: 0;
 }
 
@@ -161,20 +156,10 @@
   padding: 0;
 }
 
-.card-action {
-  padding-bottom: 5px;
-}
-
 /* Card-Footer */
 
-.button-wrap {
-  width: 100%;
-  padding: 5px;
-}
-
-.button-wrap button {
-  display: block;
-  margin: 0 auto;
+.card-action {
+  padding-bottom: 5px;
 }
 
 /* Modal */
@@ -221,7 +206,6 @@
   }
   .card-text {
     font-size: 0.8em;
-    line-height: 2;
   }
 }
 
