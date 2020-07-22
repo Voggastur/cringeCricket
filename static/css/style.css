@@ -2,14 +2,24 @@
 
 * {
   font-family: "Special Elite", cursive;
+}
+
+.link-text {
+  font-size: 1.2em;
+  font-weight: 300;
   margin: 0;
-  padding: 0;
+  margin-right: 2px;
+  padding: 10px;
+  padding-top: 5px;
+  transition: all 0.1s;
 }
 
 .link-text i,
-.link-text span,
-.brand-logo {
-  font-size: 1.3em;
+.link-text span {
+  font-size: 1.2em;
+  margin: 0;
+  margin-right: 2px;
+  transition: all 0.1s ease;
 }
 
 .brand-logo {
@@ -86,6 +96,7 @@
   cursor: pointer;
 }
 
+/* Helmet container */
 .header-content .helmet {
   float: left;
   height: 100%;
@@ -94,8 +105,8 @@
   padding: 0;
 }
 
+/* Negating effects of Materialize css (Since a parent has a border-box) */
 .collapsible {
-  /* Negating effects of Materialize css (Since a parent has a border-box) */
   border: none;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
@@ -103,15 +114,23 @@
   box-shadow: 0px 0px 0px 0px #000;
 }
 
+/* Border styles are negating Materialize css */
 .collapsible-header,
 .collapsible-body {
-  /* Border styles are negating Materialize css */
   width: 100%;
-  padding: 5px, 0px;
+  padding: 5px;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
   -moz-box-shadow: 0px 0px 0px 0px #000;
   box-shadow: 0px 0px 0px 0px #000;
+}
+
+.herocard h2 {
+    font-size: 2.2em;
+}
+
+.herocard p {
+    font-size: 1.2rem;
 }
 
 .header-content {
@@ -134,7 +153,7 @@
 
 .header-content h4 i,
 .header-content h4 span {
-  font-size: 0.9em;
+  font-size: 1em;
   margin: 0;
   padding: 0;
 }
@@ -190,20 +209,32 @@
   font-size: 2.5em;
 }
 
+/* Medium screens below 992 */
+@media screen and (max-width: 992px) {
+}
+
 /* Small screens */
 @media screen and (max-width: 600px) {
+  .link-text,
+  .link-text i,
+  .link-text span {
+    font-size: 1.2em;
+  }
+
   .caption1 {
     font-size: 3.6em;
   }
+
   .brand-logo {
     margin: 0;
   }
+
   .header-content h4,
   .header-content h4 i,
   .header-content h4 span {
     font-size: 0.9em;
-    margin: 0;
   }
+
   .card-text {
     font-size: 0.8em;
   }
@@ -215,11 +246,20 @@
     margin: 0;
     font-size: 0.7em;
   }
+
+  .link-text,
+  .link-text i,
+  .link-text span {
+    padding: 2px;
+    margin-right: 0px;
+  }
+
   .header-content h4,
   .header-content h4 i,
   .header-content h4 span {
     font-size: 0.8em;
   }
+  
   .card-text {
     font-size: 0.7em;
   }

@@ -22,40 +22,47 @@
 
 <body>
 	<header>
-		<nav class="nav-wrapper blue-grey darken-1">
-			<a href="{{url_for('get_heroes')}}" class="grey-text text-lighten-3 left brand-logo">
-				HeroesDB</a>
+		<nav class="nav-wrapper blue-grey darken-2">
+			<a href="{{url_for('get_heroes')}}" class="brand-logo grey-text text-lighten-2 left">HeroesDB </a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li>
-					<a class="grey-text text-lighten-3" href="{{url_for('get_heroes')}}">
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('get_heroes')}}">
 						<i class="fas fa-home"></i>
-						<span class="link-text">Home</span></a>
+						<span>Home</span>
+					</a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-3" href="{{url_for('add_hero')}}">
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('add_hero')}}">
 						<i class="fa fa-user-plus"></i>
-						<span class="link-text">Create Hero</span></a>
+						<span>Create Hero</span>
+					</a>
 				</li>
 				<li>
-					<a class="grey-text text-lighten-3" href="{{url_for('get_adventure')}}">
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('get_adventure')}}">
 						<i class="fas fa-chess-rook"></i>
-						<span class="link-text">Adventures</span></a>
+						<span>Adventures</span>
+					</a>
+				</li>
+				<li>
+					<a class="grey-text text-lighten-2 link-text" href="{{url_for('add_adventure')}}">
+						<i class="fas fa-plus-circle"></i>
+						<span>Add Adventure</span>
+					</a>
 				</li>
 			</ul>
 			<ul class="right hide-on-large-only">
-				<li>
-					<a href="{{url_for('get_heroes')}}">
+				<li><a href="{{url_for('get_heroes')}}" class="link-text">
 						<i class="fas fa-home"></i>
-					</a>
-				</li>
-				<li>
-					<a href="{{url_for('add_hero')}}">
+					</a></li>
+				<li><a href="{{url_for('add_hero')}}" class="link-text">
 						<i class="fa fa-user-plus"></i>
-					</a>
-				</li>
-				<li>
-					<a href="{{url_for('get_adventure')}}">
+					</a></li>
+				<li><a href="{{url_for('get_adventure')}}" class="link-text">
 						<i class="fas fa-chess-rook"></i>
+					</a></li>
+				<li>
+					<a href="{{url_for('add_adventure')}}" class="link-text">
+						<i class="fas fa-plus-circle"></i>
 					</a>
 				</li>
 			</ul>
@@ -117,52 +124,53 @@
 		<div class="container">
 			<div class="row">
 				<!-- Hero Card -->
-				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-1 grey-text text-lighten-3">
+				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-2 grey-text text-lighten-2">
 					<ul class="collapsible card-items">
 						<li class="left-align">
-							<div class="collapsible-header blue-grey darken-1 grey-text text-lighten-3">
+							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
 								<div class="header-content">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
-									<h4>
-										<i class="fas fa-pen target"></i>
-                                        <span class="target"> Hero Name:</span>
-										{{hero.hero_name}}
-									</h4>
-									<h4>
-										<i class="fas fa-user target"></i>
-                                        <span class="target"> Race:</span>
-										{{hero.race}}
-									</h4>
-									<h4>
-										<i class="fas fa-wrench target"></i>
-                                        <span class="target"> Profession:</span>
-										{{hero.profession}}
-									</h4>
+										<h4>
+											<i class="fas fa-pen target"></i>
+											<span class="target"> Hero Name:</span>
+											{{hero.hero_name}}
+										</h4>
+										<h4>
+											<i class="fas fa-user target"></i>
+											<span class="target"> Race:</span>
+											{{hero.race}}
+										</h4>
+										<h4>
+											<i class="fas fa-wrench target"></i>
+											<span class="target"> Profession:</span>
+											{{hero.profession}}
+										</h4>
+									</div>
 								</div>
-							</div>
-							<div class="collapsible-body blue-grey darken-1">
-								<p class="card-text">
-									<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-chess-rook"></i><span> Adventure:</span>
-									{{hero.adventure_name}}
-								</p>
-							</div>
+								<div class="collapsible-body blue-grey darken-2">
+									<p class="card-text">
+										<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shopping-bag"></i><span> Possessions:</span>
+										{{hero.possessions}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-chess-rook"></i><span> Adventure:</span>
+										{{hero.adventure_name}}
+									</p>
+								</div>
 						</li>
 					</ul>
 					<!-- Hero Card Footer -->
@@ -172,7 +180,7 @@
 						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
 							Delete</a>
 						<!-- Modal Delete Structure -->
-						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-3">
+						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-2">
 							<div class="modal-content center">
 								<h4>Deletion</h4>
 								<p>Are you sure you want to delete {{hero.hero_name}}?</p>
@@ -188,53 +196,54 @@
 					</div>
 				</div>
 				<!-- End Hero Card -->
-                <!-- Hero Card -->
-				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-1 grey-text text-lighten-3">
+				<!-- Hero Card -->
+				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-2 grey-text text-lighten-2">
 					<ul class="collapsible card-items">
 						<li class="left-align">
-							<div class="collapsible-header blue-grey darken-1 grey-text text-lighten-3">
+							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
 								<div class="header-content">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
-									<h4 class="card-text">
-										<i class="fas fa-pen target"></i>
-                                        <span class="target"> Hero Name:</span>
-										{{hero.hero_name}}
-									</h4>
-									<h4 class="card-text">
-										<i class="fas fa-user target"></i>
-                                        <span class="target"> Race:</span>
-										{{hero.race}}
-									</h4>
-									<h4 class="card-text">
-										<i class="fas fa-wrench target"></i>
-                                        <span class="target"> Profession:</span>
-										{{hero.profession}}
-									</h4>
+										<h4>
+											<i class="fas fa-pen target"></i>
+											<span class="target"> Hero Name:</span>
+											{{hero.hero_name}}
+										</h4>
+										<h4>
+											<i class="fas fa-user target"></i>
+											<span class="target"> Race:</span>
+											{{hero.race}}
+										</h4>
+										<h4>
+											<i class="fas fa-wrench target"></i>
+											<span class="target"> Profession:</span>
+											{{hero.profession}}
+										</h4>
+									</div>
 								</div>
-							</div>
-							<div class="collapsible-body blue-grey darken-1">
-								<p class="card-text">
-									<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-chess-rook"></i><span> Adventure:</span>
-									{{hero.adventure_name}}
-								</p>
-							</div>
+								<div class="collapsible-body blue-grey darken-2">
+									<p class="card-text">
+										<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shopping-bag"></i><span> Possessions:</span>
+										{{hero.possessions}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-chess-rook"></i><span> Adventure:</span>
+										{{hero.adventure_name}}
+									</p>
+								</div>
 						</li>
 					</ul>
 					<!-- Hero Card Footer -->
@@ -244,7 +253,7 @@
 						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
 							Delete</a>
 						<!-- Modal Delete Structure -->
-						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-3">
+						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-2">
 							<div class="modal-content center">
 								<h4>Deletion</h4>
 								<p>Are you sure you want to delete {{hero.hero_name}}?</p>
@@ -260,53 +269,54 @@
 					</div>
 				</div>
 				<!-- End Hero Card -->
-                <!-- Hero Card -->
-				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-1 grey-text text-lighten-3">
+				<!-- Hero Card -->
+				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-2 grey-text text-lighten-2">
 					<ul class="collapsible card-items">
 						<li class="left-align">
-							<div class="collapsible-header blue-grey darken-1 grey-text text-lighten-3">
+							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
 								<div class="header-content">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
-									<h4 class="card-text">
-										<i class="fas fa-pen target"></i>
-                                        <span class="target"> Hero Name:</span>
-										{{hero.hero_name}}
-									</h4>
-									<h4 class="card-text">
-										<i class="fas fa-user target"></i>
-                                        <span class="target"> Race:</span>
-										{{hero.race}}
-									</h4>
-									<h4 class="card-text">
-										<i class="fas fa-wrench target"></i>
-                                        <span class="target"> Profession:</span>
-										{{hero.profession}}
-									</h4>
+										<h4>
+											<i class="fas fa-pen target"></i>
+											<span class="target"> Hero Name:</span>
+											{{hero.hero_name}}
+										</h4>
+										<h4>
+											<i class="fas fa-user target"></i>
+											<span class="target"> Race:</span>
+											{{hero.race}}
+										</h4>
+										<h4>
+											<i class="fas fa-wrench target"></i>
+											<span class="target"> Profession:</span>
+											{{hero.profession}}
+										</h4>
+									</div>
 								</div>
-							</div>
-							<div class="collapsible-body blue-grey darken-1">
-								<p class="card-text">
-									<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-chess-rook"></i><span> Adventure:</span>
-									{{hero.adventure_name}}
-								</p>
-							</div>
+								<div class="collapsible-body blue-grey darken-2">
+									<p class="card-text">
+										<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shopping-bag"></i><span> Possessions:</span>
+										{{hero.possessions}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-chess-rook"></i><span> Adventure:</span>
+										{{hero.adventure_name}}
+									</p>
+								</div>
 						</li>
 					</ul>
 					<!-- Hero Card Footer -->
@@ -316,7 +326,7 @@
 						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
 							Delete</a>
 						<!-- Modal Delete Structure -->
-						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-3">
+						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-2">
 							<div class="modal-content center">
 								<h4>Deletion</h4>
 								<p>Are you sure you want to delete {{hero.hero_name}}?</p>
@@ -332,53 +342,54 @@
 					</div>
 				</div>
 				<!-- End Hero Card -->
-                <!-- Hero Card -->
-				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-1 grey-text text-lighten-3">
+				<!-- Hero Card -->
+				<div class="col l5 push-l1 pull-l1 s10 offset-s1 herocard blue-grey darken-2 grey-text text-lighten-2">
 					<ul class="collapsible card-items">
 						<li class="left-align">
-							<div class="collapsible-header blue-grey darken-1 grey-text text-lighten-3">
+							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
 								<div class="header-content">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
-									<h4 class="card-text">
-										<i class="fas fa-pen target"></i>
-                                        <span class="target"> Hero Name:</span>
-										{{hero.hero_name}}
-									</h4>
-									<h4 class="card-text">
-										<i class="fas fa-user target"></i>
-                                        <span class="target"> Race:</span>
-										{{hero.race}}
-									</h4>
-									<h4 class="card-text">
-										<i class="fas fa-wrench target"></i>
-                                        <span class="target"> Profession:</span>
-										{{hero.profession}}
-									</h4>
+										<h4>
+											<i class="fas fa-pen target"></i>
+											<span class="target"> Hero Name:</span>
+											{{hero.hero_name}}
+										</h4>
+										<h4>
+											<i class="fas fa-user target"></i>
+											<span class="target"> Race:</span>
+											{{hero.race}}
+										</h4>
+										<h4>
+											<i class="fas fa-wrench target"></i>
+											<span class="target"> Profession:</span>
+											{{hero.profession}}
+										</h4>
+									</div>
 								</div>
-							</div>
-							<div class="collapsible-body blue-grey darken-1">
-								<p class="card-text">
-									<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-shopping-bag"></i><span> Possessions:</span> {{hero.possessions}}
-								</p>
-								<p class="card-text">
-									<i class="fas fa-chess-rook"></i><span> Adventure:</span>
-									{{hero.adventure_name}}
-								</p>
-							</div>
+								<div class="collapsible-body blue-grey darken-2">
+									<p class="card-text">
+										<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-horse"></i><span> Mount:</span> {{hero.mount}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-shopping-bag"></i><span> Possessions:</span>
+										{{hero.possessions}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-chess-rook"></i><span> Adventure:</span>
+										{{hero.adventure_name}}
+									</p>
+								</div>
 						</li>
 					</ul>
 					<!-- Hero Card Footer -->
@@ -388,7 +399,7 @@
 						<a href="#deletion" class="waves-effect btn red modal-trigger"><i class="fas fa-user-minus"></i>
 							Delete</a>
 						<!-- Modal Delete Structure -->
-						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-3">
+						<div id="{{hero.hero_name}}" class="modal blue-grey darken-2 grey-text text-lighten-2">
 							<div class="modal-content center">
 								<h4>Deletion</h4>
 								<p>Are you sure you want to delete {{hero.hero_name}}?</p>
@@ -404,7 +415,7 @@
 					</div>
 				</div>
 				<!-- End Hero Card -->
-            </div>
+			</div>
 		</div>
 	</section>
 	<!-- Footer -->
