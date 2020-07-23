@@ -96,15 +96,6 @@
   cursor: pointer;
 }
 
-/* Helmet container */
-.header-content .helmet {
-  float: left;
-  height: 100%;
-  width: 18%;
-  left: 0;
-  padding: 0;
-}
-
 /* Negating effects of Materialize css (Since a parent has a border-box) */
 .collapsible {
   border: none;
@@ -126,11 +117,11 @@
 }
 
 .herocard h2 {
-    font-size: 2.2em;
+    font-size: 2.3em;
 }
 
 .herocard p {
-    font-size: 1.2rem;
+    font-size: 1.1em;
 }
 
 .header-content {
@@ -139,8 +130,18 @@
   padding-bottom: 5px;
 }
 
+/* Helmet container */
+.header-content .helmet {
+  float: left;
+  height: 100%;
+  width: 18%;
+  left: 0;
+  padding: 0;
+}
+
+/* h4 next to Helmet */
 .header-content h4 {
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 300;
   text-overflow: ellipsis;
   float: left;
@@ -159,7 +160,7 @@
 }
 
 .card-text {
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 1.5;
   width: 70%;
   text-overflow: ellipsis;

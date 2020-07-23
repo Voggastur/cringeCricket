@@ -8,7 +8,8 @@
 	<!-- Fontawesome Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 	<!-- Google Fonts 'Grenze Gotisch', 'Special Elite' -->
-	<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500&family=Special+Elite&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500&family=Special+Elite&display=swap"
+		rel="stylesheet">
 	<!-- My shortcut icon -->
 	<link rel="shortcut icon" type="image/jpg" href="static/images/favicon.ico" />
 	<!-- Materialize CSS -->
@@ -126,7 +127,7 @@
 					<ul class="collapsible card-items">
 						<li class="left-align">
 							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
-								<div class="header-content">
+								<div class="header-content valign-wrapper">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
@@ -134,16 +135,6 @@
 											<i class="fas fa-pen target"></i>
 											<span class="target"> Hero Name:</span>
 											{{hero.hero_name}}
-										</h4>
-										<h4>
-											<i class="fas fa-user target"></i>
-											<span class="target"> Race:</span>
-											{{hero.race}}
-										</h4>
-										<h4>
-											<i class="fas fa-wrench target"></i>
-											<span class="target"> Profession:</span>
-											{{hero.profession}}
 										</h4>
 									</div>
 								</div>
@@ -153,6 +144,14 @@
 									</p>
 									<p class="card-text">
 										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-user"></i><span> Race:</span>
+										{{hero.race}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-wrench"></i><span> Profession:</span>
+										{{hero.profession}}
 									</p>
 									<p class="card-text">
 										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
@@ -199,7 +198,7 @@
 					<ul class="collapsible card-items">
 						<li class="left-align">
 							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
-								<div class="header-content">
+								<div class="header-content valign-wrapper">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
@@ -207,16 +206,6 @@
 											<i class="fas fa-pen target"></i>
 											<span class="target"> Hero Name:</span>
 											{{hero.hero_name}}
-										</h4>
-										<h4>
-											<i class="fas fa-user target"></i>
-											<span class="target"> Race:</span>
-											{{hero.race}}
-										</h4>
-										<h4>
-											<i class="fas fa-wrench target"></i>
-											<span class="target"> Profession:</span>
-											{{hero.profession}}
 										</h4>
 									</div>
 								</div>
@@ -226,6 +215,14 @@
 									</p>
 									<p class="card-text">
 										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-user"></i><span> Race:</span>
+										{{hero.race}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-wrench"></i><span> Profession:</span>
+										{{hero.profession}}
 									</p>
 									<p class="card-text">
 										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
@@ -272,7 +269,7 @@
 					<ul class="collapsible card-items">
 						<li class="left-align">
 							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
-								<div class="header-content">
+								<div class="header-content valign-wrapper">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
@@ -280,16 +277,6 @@
 											<i class="fas fa-pen target"></i>
 											<span class="target"> Hero Name:</span>
 											{{hero.hero_name}}
-										</h4>
-										<h4>
-											<i class="fas fa-user target"></i>
-											<span class="target"> Race:</span>
-											{{hero.race}}
-										</h4>
-										<h4>
-											<i class="fas fa-wrench target"></i>
-											<span class="target"> Profession:</span>
-											{{hero.profession}}
 										</h4>
 									</div>
 								</div>
@@ -299,6 +286,14 @@
 									</p>
 									<p class="card-text">
 										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-user"></i><span> Race:</span>
+										{{hero.race}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-wrench"></i><span> Profession:</span>
+										{{hero.profession}}
 									</p>
 									<p class="card-text">
 										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
@@ -345,33 +340,31 @@
 					<ul class="collapsible card-items">
 						<li class="left-align">
 							<div class="collapsible-header blue-grey darken-2 grey-text text-lighten-2">
-								<div class="header-content">
+								<div class="header-content valign-wrapper">
 									<div class="helmet valign-wrapper">
 										<img src="static/images/helmet.png" alt="Helmet - Generic Hero Symbol" class="responsive-img"/>
 									</div>
 										<h4>
 											<i class="fas fa-pen target"></i>
-											<span class="target"> Hero Name:</span>
+											<span class="target"> Name:</span>
 											{{hero.hero_name}}
-										</h4>
-										<h4>
-											<i class="fas fa-user target"></i>
-											<span class="target"> Race:</span>
-											{{hero.race}}
-										</h4>
-										<h4>
-											<i class="fas fa-wrench target"></i>
-											<span class="target"> Profession:</span>
-											{{hero.profession}}
 										</h4>
 									</div>
 								</div>
 								<div class="collapsible-body blue-grey darken-2">
 									<p class="card-text">
-										<i class="fas fa-fist-raised"></i><span> Weapon(s):</span> {{hero.weapon}}
+										<i class="fas fa-fist-raised"></i><span> Weapon:</span> {{hero.weapon}}
 									</p>
 									<p class="card-text">
 										<i class="fas fa-shield-alt"></i><span> Armor:</span> {{hero.armor}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-user"></i><span> Race:</span>
+										{{hero.race}}
+									</p>
+									<p class="card-text">
+										<i class="fas fa-wrench"></i><span> Profession:</span>
+										{{hero.profession}}
 									</p>
 									<p class="card-text">
 										<i class="fas fa-home"></i><span> Home:</span> {{hero.home}}
