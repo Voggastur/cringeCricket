@@ -11,6 +11,8 @@
   margin-right: 2px;
   padding: 10px;
   padding-top: 5px;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
   transition: all 0.1s;
 }
 
@@ -19,6 +21,8 @@
   font-size: 1.2em;
   margin: 0;
   margin-right: 2px;
+  -webkit-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
@@ -44,6 +48,12 @@
 }
 
 .linear-gradient {
+  background: -o-repeating-linear-gradient(
+    324deg,
+    #f0f4c3,
+    #9c98dd 35%,
+    #f0f4c3 65%
+  );
   background: repeating-linear-gradient(
     0.35turn,
     #f0f4c3,
@@ -52,8 +62,8 @@
   );
 }
 
+/* Block content imported into this section */
 .jinja-section {
-  /* Block content imported into this section */
   text-align: center;
   text-decoration: underline;
   padding-top: 20px;
@@ -76,19 +86,21 @@
 /* Hero Cards */
 
 .container .row {
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .herocard {
   margin: 20px;
   padding-bottom: 5px;
   border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .herocard:hover {
   -webkit-box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
-  -moz-box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
   box-shadow: 8px 8px 30px 4px rgba(85, 85, 85, 1);
 }
 
@@ -101,7 +113,6 @@
   border: none;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
-  -moz-box-shadow: 0px 0px 0px 0px #000;
   box-shadow: 0px 0px 0px 0px #000;
 }
 
@@ -112,7 +123,6 @@
   padding: 5px;
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 0px #000;
-  -moz-box-shadow: 0px 0px 0px 0px #000;
   box-shadow: 0px 0px 0px 0px #000;
 }
 
@@ -143,7 +153,8 @@
 .header-content h4 {
   font-size: 1.1em;
   font-weight: 300;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   float: left;
   width: 75%;
   line-height: 1.5;
@@ -163,7 +174,8 @@
   font-size: 0.9em;
   line-height: 1.5;
   width: 70%;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   margin: 0;
   margin-right: 10px;
   padding: 0;

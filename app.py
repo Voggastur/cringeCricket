@@ -64,7 +64,7 @@ def update_hero(hero_id):
         'home': request.form.get('home'),
         'possessions': request.form.get('possessions'),
         'adventure_name': request.form.get('adventure_name')
-    })
+                  })
     return redirect(url_for('get_heroes'))
 
 
@@ -99,10 +99,10 @@ def edit_adventure(adventure_id):
 def update_adventure(adventure_id):
     adventures = mongo.db.adventures
     adventures.update({'_id': ObjectId(adventure_id)},
-    {
+                      {
         'adventure_name': request.form.get('adventure_name'),
         'adventure_topic': request.form.get('adventure_topic')
-    })
+                      })
     return redirect(url_for('get_adventure'))
 
 
